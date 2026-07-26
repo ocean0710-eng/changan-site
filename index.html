@@ -55,7 +55,7 @@
 <div class="announcement">Complimentary international shipping on orders over $300</div>
 <header class="header">
   <div class="head-main"><button class="icon menu" id="menu" aria-label="Open menu">☰</button><a class="wordmark" href="#home">CHANG'AN <span>长安</span></a><div class="tools"><button class="icon account" aria-label="Search">⌕</button><button class="icon account" aria-label="Account">♙</button><button class="icon" id="bag" aria-label="Shopping bag">♧<span class="bag-count" id="bagCount">0</span></button></div></div>
-  <nav class="nav" aria-label="Primary"><a href="#collections">Series</a><a href="#gemstones">Gemstones</a><a href="#jade">Jade</a><a href="#jewelry">Jewelry</a><a href="#woodcraft">Woodcraft</a><a href="#home">Gifts</a><a href="#about">About</a></nav>
+  <nav class="nav" aria-label="Primary"><a href="#home" onclick="setTimeout(()=>document.getElementById(collectionsSection\).scrollIntoView(),50)">Series</a><a href="#gemstones">Gemstones</a><a href="#jade">Jade</a><a href="#jewelry">Jewelry</a><a href="#woodcraft">Woodcraft</a><a href="#home" onclick="setTimeout(()=>document.querySelector(.gift\).scrollIntoView(),50)">Gifts</a><a href="#about">About</a></nav>
 </header>
 <aside class="drawer" id="drawer"><button class="drawer-close" id="closeMenu">×</button><p class="eyebrow">CHANG'AN</p><a href="#home">Home</a><a href="#gemstones">Gemstones</a><a href="#jewelry">Jewelry</a><a href="#woodcraft">Woodcraft</a><a href="#collections">Six collections</a><a href="#about">Our story</a><a href="#bag">Your bag</a></aside>
 
@@ -101,6 +101,11 @@
 <section class="catalog"><a class="back" href="#home">← Back home</a>
 <div class="product-grid" id="woodProducts"></div></section></main>
 
+<!-- JADE PAGE -->
+<main id="jade" class="route"><section class="page-hero"><p class="eyebrow">Stillness carved in stone</p><h1>Jade</h1><p style="max-width:600px;color:#c6cbce;margin:16px auto 0">Hetian nephrite from Xinjiang. Burmese jadeite. Each piece carved to honor the stone's natural character — never forced, never disguised.</p></section>
+<section class="catalog"><a class="back" href="#home">← Back home</a>
+<div class="product-grid" id="jadeProducts"></div></section></main>
+
 <main id="an" class="route"><section class="page-hero"><div style="font:400 90px 'Noto Serif SC';color:var(--gold)">安</div><p class="eyebrow">Ān · Grounded presence</p><h1>Stillness that cannot be taken from you.</h1><p style="max-width:620px;margin:18px auto 0;color:#c6cbce">These pieces are not ornaments alone. They are anchors—each material chosen for quietude, each form refined to its essential truth.</p></section><section class="catalog"><div style="display:flex;gap:10px;margin-bottom:20px"><button class="option active">All</button><button class="option">Bracelets</button><button class="option">Rings</button><button class="option">Objects</button></div><div class="product-grid" id="anProducts"></div></section><div class="about-wide"><img src="CHANGAN-site-images/onbody.png" alt="Ān collection"></div></main>
 
 <main id="product" class="route"><section class="pdp"><div class="pdp-image"><img id="pdpImage" src="CHANGAN-site-images/mist.png" alt=""></div><div class="pdp-info"><a class="back" href="#home">← All pieces</a><span class="tag" id="pdpTag">Ān · Grounded presence</span><h1 id="pdpName">Mistline Cuff</h1><p class="detail" id="pdpDetail">Blackened sterling silver · 18K gold line</p><p class="price" id="pdpPrice">$680 USD</p><p>Select size</p><div class="option"><button class="active">S / M</button><button>M / L</button></div><button class="add addPdp">Add to bag</button><div class="accordion"><h3>Material truth</h3><p>Every material is disclosed clearly. Natural variation is part of the piece.</p></div><div class="accordion"><h3>Delivery & duties</h3><p>Worldwide tracked delivery. Duties are calculated at checkout where available.</p></div><div class="accordion"><h3>Returns</h3><p>Unworn ready-to-ship pieces may be returned within 30 days. Commissioned pieces are final sale.</p></div></div></section></main>
@@ -135,7 +140,10 @@ const products=[
  {id:12,name:'Nánmù Prayer Beads',tag:'Cháng · Enduring',detail:'Jinsi nánmù · Silk tassel',price:960,img:'CHANGAN-site-images/wood-bg.png',cat:'wood'},
  {id:13,name:'Agarwood Pendant',tag:'Níng · Stillness',detail:'Wild agarwood · Leather cord',price:1150,img:'CHANGAN-site-images/gift.png',cat:'wood'},
  {id:14,name:'Ebony Ring Box',tag:'Ān · Grounded',detail:'Solid ebony · Suede interior',price:560,img:'CHANGAN-site-images/mist.png',cat:'wood'},
- {id:15,name:'Rosewood Bangle',tag:'Lè · Ease',detail:'Vietnamese rosewood · Hand-carved',price:380,img:'CHANGAN-site-images/stone.png',cat:'wood'}
+{id:16,name:'Hetian Jade Bracelet',tag:'Ān · Grounded',detail:'Natural hetian nephrite · Silk cord',price:2400,img:'CHANGAN-site-images/stone.png',cat:'jade'},
+ {id:17,name:'Jadeite Drop Pendant',tag:'Níng · Stillness',detail:'Burmese jadeite · 18K gold bail',price:3600,img:'CHANGAN-site-images/mist.png',cat:'jade'},
+ {id:18,name:'Celadon Jade Ring',tag:'Lè · Ease',detail:'Pale celadon hetian · 925 silver',price:1280,img:'CHANGAN-site-images/current.png',cat:'jade'},
+ {id:19,name:'Jade Bead Strand',tag:'Cháng · Enduring',detail:'Graduated hetian beads · Silk tassel',price:1850,img:'CHANGAN-site-images/onbody.png',cat:'jade'}
 ];
 let cart=JSON.parse(localStorage.getItem('changan-cart')||'[]');if(!Array.isArray(cart))cart=[];let activeProduct=products[0];
 const card=p=>`<article class="product"><a href="#product/${p.id}" class="product-image"><img src="${p.img}" alt="${p.name}"></a><div class="product-meta"><span class="tag">${p.tag}</span><h3><a href="#product/${p.id}">${p.name}</a></h3><p class="detail">${p.detail}</p><p class="price">$${p.price.toLocaleString()} USD</p><button class="add" data-add="${p.id}">Add to bag</button></div></article>`;
