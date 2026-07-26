@@ -48,7 +48,7 @@
 <body>
 <!-- INTRO VIDEO -->
 <div class="intro-video" id="introVideo">
-<video src="CHANGAN-site-images/intro.mp4" autoplay muted playsinline id="introVid"></video>
+<video src="CHANGAN-site-images/intro.mp4" autoplay muted playsinline preload="auto" id="introVid" style="width:100%;height:100%;object-fit:cover"></video>
 <button class="skip" id="skipIntro">Skip</button>
 </div>
 
@@ -60,7 +60,7 @@
 <aside class="drawer" id="drawer"><button class="drawer-close" id="closeMenu">×</button><p class="eyebrow">CHANG'AN</p><a href="#home">Home</a><a href="#gemstones">Gemstones</a><a href="#jewelry">Jewelry</a><a href="#woodcraft">Woodcraft</a><a href="#collections">Six collections</a><a href="#about">Our story</a><a href="#bag">Your bag</a></aside>
 
 <main id="home" class="route active">
-<section class="hero"><picture><source media="(max-width:520px)" srcset="CHANGAN-site-images/hero.png"><source media="(max-width:900px)" srcset="CHANGAN-site-images/hero.png"><img src="CHANGAN-site-images/hero-bg.png" alt="CHANG'AN"></picture><div class="hero-copy"><h1>From the Mist,<br>Into the World.</h1><p class="sub">Handcrafted Luxury from China</p><div class="actions"><a class="btn" href="#gemstones">Explore the Collection</a></div></div></section>
+<section class="hero"><img src="CHANGAN-site-images/hero-bg.png" alt="CHANG'AN" loading="eager" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><div class="hero-copy"><h1>From the Mist,<br>Into the World.</h1><p class="sub">Handcrafted Luxury from China</p><div class="actions"><a class="btn" href="#gemstones">Explore the Collection</a></div></div></section>
 <section class="intro"><div class="intro-inner"><div class="blessing">多喜乐，长安宁</div><h2>Much joy. Enduring peace.</h2><p>CHANG'AN begins with a wish: abundance in life, joy in the everyday, ease in movement, growth with intention, grounded presence, and stillness within.</p></div></section>
 <section class="section collections" id="collectionsSection"><div class="section-inner"><div class="section-head"><div><p class="eyebrow">Six collections</p><h2 class="section-title">Six states, one wish.</h2></div><p>Six ways of returning to your center, expressed through form, material and movement.</p></div><div class="state-grid">
 <a class="state" href="#gemstones" style="--state-img:url('CHANGAN-site-images/state-duo.png')"><span class="char">多</span><div><h3>Duō · Abundance</h3><p>Open to possibility</p></div></a>
@@ -156,7 +156,7 @@ window.addEventListener('hashchange',route);closeMenu.onclick=()=>drawer.classLi
 // Intro video
 const introV=document.getElementById('introVideo'),introVid=document.getElementById('introVid'),skipBtn=document.getElementById('skipIntro');
 function endIntro(){introV.classList.add('done');setTimeout(()=>introV.style.display='none',1000)}
-if(introVid){introVid.onended=endIntro;introVid.onerror=()=>endIntro();skipBtn.onclick=endIntro;setTimeout(()=>{if(!introV.classList.contains('done'))endIntro()},7000)}
+if(introVid){introVid.onended=endIntro;introVid.onerror=()=>endIntro();skipBtn.onclick=endIntro;setTimeout(()=>{if(!introV.classList.contains('done'))endIntro()},4000)}
 </script>
 </body>
 </html>
