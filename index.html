@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHANG'AN — Wear Your Center</title>
+<meta name="description" content="Sculptural jewelry shaped by stillness, balance, and the quiet movement of nature. CHANG'AN: a wish, a name, a way of being.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:ital,opsz,wght@0,14..32,200;0,14..32,300;0,14..32,400;0,14..32,500;1,14..32,300;1,14..32,400&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   CHANG'AN — Design System
+   "From the Mist, Into the World"
+   ============================================================ */
+
+:root {
+  /* —— Core palette —— */
+  --ink-deep:       #14181c;   /* 玄青 — dark cyan-black */
+  --rock-black:     #0a0a0a;   /* 岩黑 */
+  --mist:           #bfbab2;   /* 雾灰 */
+  --mist-light:     #d9d5cf;   /* 雾灰浅 */
+  --matte-gold:     #b8a48a;   /* 哑金 */
+  --matte-gold-dim: #a08e76;   /* 哑金深 */
+  --cinnabar:       #8c5a4a;   /* 低饱和朱砂 */
+  --rice-paper:     #f5f2ed;   /* 宣纸 — warm off-white */
+  --rice-paper-dim: #ece7df;   /* 宣纸略深 */
+
+  /* —— Text —— */
+  --text-primary:   #1a1a1a;
+  --text-secondary: rgba(26,26,26,0.65);
+  --text-tertiary:  rgba(26,26,26,0.40);
+  --text-inverse:   #e8e4de;
+  --text-inverse-dim: rgba(232,228,222,0.60);
+
+  /* —— Spacing —— */
+  --space-xs:  0.5rem;
+  --space-sm:  1rem;
+  --space-md:  1.5rem;
+  --space-lg:  2.5rem;
+  --space-xl:  4rem;
+  --space-2xl: 6rem;
+  --space-3xl: 10rem;
+
+  /* —— Type —— */
+  --font-display: 'Cormorant Garamond', 'Georgia', 'Times New Roman', serif;
+  --font-body:    'Inter', -apple-system, 'Segoe UI', 'Helvetica Neue', sans-serif;
+
+  --nav-height: 5rem;
+
+  /* —— Motion —— */
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-in-out:   cubic-bezier(0.76, 0, 0.24, 1);
+  --duration-slow: 0.8s;
+  --duration-med:  0.5s;
+}
+
+/* —— Reset —— */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background: var(--rice-paper);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { border: none; background: none; cursor: pointer; font-family: inherit; }
+
+/* —— Typography —— */
+.display-xl {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+}
+.display-lg {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-weight: 300;
+  line-height: 1.12;
+  letter-spacing: -0.005em;
+}
+.display-md {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1.15;
+}
+.heading-sm {
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+}
+.body-lg {
+  font-size: 1.125rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+.body-md {
+  font-size: 0.9375rem;
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+.body-sm {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-tertiary);
+}
+.caption {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+/* —— Utility —— */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-lg); }
+.container-narrow { max-width: 800px; margin: 0 auto; padding: 0 var(--space-lg); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--nav-height);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-xl);
+  background: rgba(245,242,237,0.85);
+  backdrop-filter: saturate(150%) blur(20px);
+  -webkit-backdrop-filter: saturate(150%) blur(20px);
+  border-bottom: 0.5px solid rgba(10,10,10,0.08);
+  transition: background 0.3s;
+}
+.nav.scrolled { background: rgba(245,242,237,0.95); }
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-deep);
+}
+.nav-links {
+  display: flex;
+  gap: var(--space-lg);
+  list-style: none;
+  align-items: center;
+}
+.nav-links a {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  transition: color 0.25s;
+  padding: 0.25rem 0;
+}
+.nav-links a:hover { color: var(--text-primary); }
+.nav-actions {
+  display: flex;
+  gap: var(--space-md);
+  align-items: center;
+}
+.nav-actions button, .nav-actions a {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  padding: 0.25rem 0;
+}
+.nav-actions button:hover { color: var(--text-primary); }
+.bag-count { font-size: 0.6875rem; margin-left: 0.25rem; color: var(--matte-gold); }
+
+/* Mobile nav toggle */
+.nav-toggle { display: none; flex-direction: column; gap: 5px; padding: 4px; }
+.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--text-primary); transition: 0.3s; }
+
+/* ============================================================
+   SHIPPING BANNER
+   ============================================================ */
+.shipping-banner {
+  margin-top: var(--nav-height);
+  background: var(--ink-deep);
+  color: var(--mist);
+  text-align: center;
+  padding: 0.625rem var(--space-md);
+  font-size: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+}
+
+/* ============================================================
+   HERO — Section 1
+   ============================================================ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  background: var(--ink-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('CHANGAN-site-images/hero.png');
+  background-size: cover;
+  background-position: center;
+}
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.7) 100%);
+}
+@keyframes mist-drift {
+  0% { opacity: 0.6; transform: scale(1); }
+  100% { opacity: 1; transform: scale(1.05); }
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: var(--space-3xl) var(--space-lg);
+  max-width: 900px;
+}
+.hero-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--matte-gold);
+  margin-bottom: var(--space-lg);
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.05;
+  color: var(--text-inverse);
+  margin-bottom: var(--space-md);
+}
+.hero-subtitle {
+  font-size: 1.0625rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--text-inverse-dim);
+  max-width: 560px;
+  margin: 0 auto var(--space-xl);
+}
+.hero-cta {
+  display: inline-block;
+  padding: 0.875rem 2.5rem;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-inverse);
+  border: 1px solid var(--matte-gold);
+  transition: all 0.4s var(--ease-out-expo);
+}
+.hero-cta:hover {
+  background: var(--matte-gold);
+  color: var(--rock-black);
+}
+.hero-scroll {
+  position: absolute;
+  bottom: var(--space-xl);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+.hero-scroll span {
+  display: block;
+  width: 1px;
+  height: 3rem;
+  background: linear-gradient(to bottom, var(--matte-gold), transparent);
+  animation: scroll-line 2s ease-in-out infinite;
+}
+@keyframes scroll-line {
+  0%, 100% { opacity: 0.3; transform: scaleY(0.5); transform-origin: top; }
+  50% { opacity: 1; transform: scaleY(1); transform-origin: top; }
+}
+
+/* ============================================================
+   BRAND STORY — Section 2
+   ============================================================ */
+.brand-story {
+  padding: var(--space-3xl) 0;
+  background: var(--rice-paper);
+}
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: center;
+}
+.story-visual {
+  position: relative;
+  aspect-ratio: 3/4;
+  background: var(--rice-paper-dim);
+  overflow: hidden;
+}
+.story-visual-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 50% 40%, rgba(184,164,138,0.12) 0%, transparent 50%),
+    radial-gradient(circle at 30% 70%, rgba(140,90,74,0.06) 0%, transparent 50%),
+    linear-gradient(180deg, var(--rice-paper) 0%, var(--rice-paper-dim) 100%);
+}
+.story-visual-placeholder .placeholder-text {
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-style: italic;
+  color: var(--matte-gold-dim);
+  letter-spacing: 0.06em;
+  text-align: center;
+  max-width: 200px;
+}
+.story-text {
+  padding: var(--space-xl) 0;
+}
+.story-chinese {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: var(--matte-gold-dim);
+  margin-bottom: var(--space-md);
+  letter-spacing: 0.04em;
+}
+.story-heading {
+  margin-bottom: var(--space-md);
+}
+.story-divider {
+  width: 3rem;
+  height: 1px;
+  background: var(--matte-gold);
+  margin: var(--space-lg) 0;
+}
+.story-body {
+  max-width: 460px;
+}
+
+/* ============================================================
+   DESIGN CODES — Section 3
+   ============================================================ */
+.design-codes {
+  padding: var(--space-3xl) 0;
+  background: var(--rock-black);
+  color: var(--text-inverse);
+}
+.design-codes .section-header {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+.design-codes .section-header .caption { color: var(--matte-gold); }
+.design-codes .section-header h2 { color: var(--text-inverse); }
+.codes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+.code-card {
+  text-align: center;
+}
+.code-visual {
+  aspect-ratio: 1;
+  margin-bottom: var(--space-lg);
+  position: relative;
+  overflow: hidden;
+}
+.code-visual.mist-bg {
+  background:
+    radial-gradient(circle at 50% 50%, rgba(217,213,207,0.08) 0%, transparent 70%),
+    linear-gradient(135deg, #1a1e22 0%, var(--ink-deep) 50%, #14181c 100%);
+}
+.code-visual.stone-bg {
+  background:
+    radial-gradient(circle at 50% 50%, rgba(160,142,118,0.10) 0%, transparent 60%),
+    linear-gradient(135deg, #16120e 0%, #0d0a08 50%, #12100c 100%);
+}
+.code-visual.current-bg {
+  background:
+    radial-gradient(circle at 50% 50%, rgba(140,90,74,0.08) 0%, transparent 60%),
+    linear-gradient(135deg, #14181c 0%, #0d1115 100%);
+}
+.code-visual .code-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.code-placeholder .code-symbol {
+  font-family: var(--font-display);
+  font-size: 5rem;
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(232,228,222,0.08);
+}
+.code-name {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 400;
+  font-style: italic;
+  margin-bottom: var(--space-xs);
+  color: var(--text-inverse);
+}
+.code-desc {
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--text-inverse-dim);
+  max-width: 240px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   FEATURED PRODUCTS — Section 4
+   ============================================================ */
+.featured-products {
+  padding: var(--space-3xl) 0;
+  background: var(--rice-paper);
+}
+.section-header {
+  margin-bottom: var(--space-2xl);
+}
+.section-header .caption {
+  margin-bottom: var(--space-sm);
+}
+.section-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  font-weight: 300;
+  line-height: 1.15;
+}
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+.product-card {
+  cursor: pointer;
+  transition: transform 0.4s var(--ease-out-expo);
+}
+.product-card:hover { transform: translateY(-4px); }
+.product-image {
+  aspect-ratio: 3/4;
+  margin-bottom: var(--space-md);
+  background: var(--rice-paper-dim);
+  position: relative;
+  overflow: hidden;
+}
+.product-image .product-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 50% 40%, rgba(184,164,138,0.08) 0%, transparent 60%),
+    linear-gradient(180deg, #f0ede8 0%, #e8e3db 100%);
+}
+.product-image .product-placeholder span {
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-style: italic;
+  color: var(--matte-gold-dim);
+  letter-spacing: 0.05em;
+}
+.product-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.product-name {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 0.25rem;
+}
+.product-series {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--text-tertiary);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.product-price {
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+.view-all {
+  text-align: center;
+  margin-top: var(--space-2xl);
+}
+.view-all a {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-deep);
+  border-bottom: 1px solid var(--matte-gold);
+  padding-bottom: 0.375rem;
+  transition: all 0.3s;
+}
+.view-all a:hover { border-color: var(--ink-deep); color: var(--ink-deep); }
+
+/* ============================================================
+   MATERIALS & CRAFT — Section 5
+   ============================================================ */
+.materials {
+  padding: var(--space-3xl) 0;
+  background: var(--ink-deep);
+  color: var(--text-inverse);
+}
+.materials-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: center;
+}
+.materials-visual {
+  aspect-ratio: 4/5;
+  background:
+    radial-gradient(circle at 60% 30%, rgba(184,164,138,0.10) 0%, transparent 50%),
+    radial-gradient(circle at 30% 80%, rgba(140,90,74,0.06) 0%, transparent 50%),
+    linear-gradient(135deg, #1a1e22 0%, var(--ink-deep) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.materials-visual .placeholder-text {
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-style: italic;
+  color: var(--matte-gold-dim);
+  letter-spacing: 0.06em;
+}
+.materials-text .caption { color: var(--matte-gold); }
+.materials-text h2 { color: var(--text-inverse); }
+.materials-text .body-lg { color: var(--text-inverse-dim); max-width: 460px; }
+.materials-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+.material-item {
+  padding: var(--space-md) 0;
+  border-top: 0.5px solid rgba(232,228,222,0.12);
+}
+.material-item h4 {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+  color: var(--matte-gold);
+}
+.material-item p {
+  font-size: 0.8125rem;
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--text-inverse-dim);
+}
+
+/* ============================================================
+   WEAR YOUR CENTER — Section 6
+   ============================================================ */
+.wear-center {
+  padding: var(--space-3xl) 0;
+  background: var(--rice-paper);
+}
+.wear-center .section-header {
+  text-align: center;
+}
+.wear-center .section-header .caption { color: var(--matte-gold-dim); }
+.editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+  margin-top: var(--space-2xl);
+}
+.editorial-card {
+  position: relative;
+}
+.editorial-image {
+  aspect-ratio: 4/5;
+  margin-bottom: var(--space-md);
+  background: var(--rice-paper-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.editorial-image span {
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-style: italic;
+  color: var(--matte-gold-dim);
+}
+.editorial-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+.editorial-card p {
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* ============================================================
+   GIFTS — Section 7
+   ============================================================ */
+.gifts {
+  padding: var(--space-3xl) 0;
+  background: var(--rock-black);
+  color: var(--text-inverse);
+}
+.gifts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: center;
+}
+.gifts-visual {
+  aspect-ratio: 1;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(184,164,138,0.08) 0%, transparent 60%),
+    linear-gradient(135deg, #1a1814 0%, var(--rock-black) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gifts-visual .placeholder-text {
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-style: italic;
+  color: var(--matte-gold-dim);
+  letter-spacing: 0.06em;
+}
+.gifts-text .caption { color: var(--matte-gold); }
+.gifts-text h2 { color: var(--text-inverse); }
+.gifts-text .body-lg { color: var(--text-inverse-dim); }
+.gift-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+.gift-feature {
+  padding: var(--space-md);
+  border: 1px solid rgba(232,228,222,0.10);
+  transition: border-color 0.3s;
+}
+.gift-feature:hover { border-color: var(--matte-gold); }
+.gift-feature h4 {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.375rem;
+}
+.gift-feature p {
+  font-size: 0.8125rem;
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--text-inverse-dim);
+}
+
+/* ============================================================
+   TRUST BAR — Section 8
+   ============================================================ */
+.trust-bar {
+  padding: var(--space-xl) 0;
+  background: var(--rice-paper);
+  border-top: 0.5px solid rgba(10,10,10,0.06);
+  border-bottom: 0.5px solid rgba(10,10,10,0.06);
+}
+.trust-items {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2xl);
+  flex-wrap: wrap;
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.trust-icon {
+  width: 28px;
+  height: 28px;
+  border: 0.5px solid var(--matte-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: var(--matte-gold-dim);
+}
+.trust-item span {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  letter-spacing: 0.03em;
+}
+
+/* ============================================================
+   JOURNAL — Section 9
+   ============================================================ */
+.journal {
+  padding: var(--space-3xl) 0;
+  background: var(--rice-paper);
+}
+.journal-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+}
+.journal-card {
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.journal-card:hover { transform: translateY(-3px); }
+.journal-image {
+  aspect-ratio: 3/4;
+  background: var(--rice-paper-dim);
+  margin-bottom: var(--space-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.journal-image span {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-style: italic;
+  color: var(--matte-gold-dim);
+}
+.journal-card .journal-category {
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--matte-gold-dim);
+  margin-bottom: 0.375rem;
+}
+.journal-card h4 {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.3;
+  margin-bottom: 0.25rem;
+}
+
+/* ============================================================
+   NEWSLETTER — Section 10
+   ============================================================ */
+.newsletter {
+  padding: var(--space-2xl) 0;
+  background: var(--ink-deep);
+  color: var(--text-inverse);
+  text-align: center;
+}
+.newsletter h2 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 300;
+  font-style: italic;
+  margin-bottom: var(--space-sm);
+}
+.newsletter p {
+  font-size: 0.9375rem;
+  font-weight: 300;
+  color: var(--text-inverse-dim);
+  max-width: 420px;
+  margin: 0 auto var(--space-lg);
+  line-height: 1.6;
+}
+.newsletter-form {
+  display: flex;
+  gap: var(--space-sm);
+  max-width: 440px;
+  margin: 0 auto;
+}
+.newsletter-form input {
+  flex: 1;
+  padding: 0.875rem 1.25rem;
+  background: transparent;
+  border: 1px solid rgba(232,228,222,0.25);
+  color: var(--text-inverse);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 300;
+  outline: none;
+  transition: border-color 0.3s;
+}
+.newsletter-form input::placeholder { color: var(--text-inverse-dim); }
+.newsletter-form input:focus { border-color: var(--matte-gold); }
+.newsletter-form button {
+  padding: 0.875rem 1.75rem;
+  background: var(--matte-gold);
+  color: var(--rock-black);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: background 0.3s;
+}
+.newsletter-form button:hover { background: var(--matte-gold-dim); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  padding: var(--space-2xl) 0 var(--space-xl);
+  background: var(--rock-black);
+  color: var(--text-inverse-dim);
+  font-size: 0.8125rem;
+  font-weight: 300;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-2xl);
+}
+.footer-brand .nav-logo {
+  margin-bottom: var(--space-md);
+  color: var(--text-inverse);
+}
+.footer-brand p {
+  max-width: 280px;
+  line-height: 1.6;
+  color: var(--text-inverse-dim);
+}
+.footer-col h4 {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--matte-gold);
+  margin-bottom: var(--space-md);
+}
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 0.625rem; }
+.footer-col a {
+  color: var(--text-inverse-dim);
+  transition: color 0.25s;
+}
+.footer-col a:hover { color: var(--text-inverse); }
+.footer-bottom {
+  border-top: 0.5px solid rgba(232,228,222,0.10);
+  padding-top: var(--space-lg);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  font-size: 0.75rem;
+}
+.footer-bottom-links {
+  display: flex;
+  gap: var(--space-lg);
+  list-style: none;
+}
+.footer-bottom-links a { color: var(--text-inverse-dim); }
+.footer-bottom-links a:hover { color: var(--text-inverse); }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px) {
+  .story-grid, .materials-grid, .gifts-grid { grid-template-columns: 1fr; gap: var(--space-xl); }
+  .story-visual { order: -1; aspect-ratio: 4/3; }
+  .gifts-visual { order: -1; aspect-ratio: 4/3; }
+  .codes-grid { grid-template-columns: repeat(3, 1fr); gap: var(--space-lg); }
+  .products-grid, .editorial-grid { grid-template-columns: repeat(2, 1fr); }
+  .journal-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  :root { --space-xl: 2.5rem; --space-2xl: 3.5rem; --space-3xl: 5rem; }
+  .container, .container-narrow { padding: 0 var(--space-md); }
+  .nav { padding: 0 var(--space-md); }
+  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
+  .codes-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
+  .products-grid, .editorial-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+  .journal-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+  .trust-items { gap: var(--space-lg); }
+  .materials-list { grid-template-columns: 1fr; }
+  .gift-features { grid-template-columns: 1fr; }
+  .hero-title { font-size: clamp(2rem, 8vw, 3.5rem); }
+  .newsletter-form { flex-direction: column; }
+  .footer-grid { grid-template-columns: 1fr; gap: var(--space-lg); }
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+}
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+.fade-in-delay-1 { transition-delay: 0.1s; }
+.fade-in-delay-2 { transition-delay: 0.2s; }
+.fade-in-delay-3 { transition-delay: 0.3s; }
+.fade-in-delay-4 { transition-delay: 0.4s; }
+
+/* —— Mobile nav overlay —— */
+.mobile-nav {
+  position: fixed;
+  inset: 0;
+  background: var(--rice-paper);
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+  transform: translateY(-100%);
+  transition: transform 0.5s var(--ease-in-out);
+}
+.mobile-nav.open { transform: translateY(0); }
+.mobile-nav a {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--ink-deep);
+  transition: color 0.3s;
+}
+.mobile-nav a:hover { color: var(--matte-gold-dim); }
+.mobile-close {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  padding: var(--space-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== SHIPPING BANNER ===== -->
+<div class="shipping-banner">
+  Complimentary shipping on orders over $350 &nbsp;·&nbsp; Duties & taxes calculated at checkout &nbsp;·&nbsp; <a href="#" style="color:var(--matte-gold);text-decoration:underline;text-underline-offset:2px;">Learn more</a>
+</div>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav" id="nav">
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <a href="#" class="nav-logo">
+    <img src="CHANGAN-site-images/logo-an.png" alt="CHANG'AN" style="height:3.5rem;vertical-align:middle;margin:0.3rem 0;">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#new">New</a></li>
+    <li><a href="#jewelry">Jewelry</a></li>
+    <li><a href="#collections">Collections</a></li>
+    <li><a href="#gifts-section">Gifts</a></li>
+    <li><a href="#story">Our World</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button aria-label="Search">Search</button>
+    <button aria-label="Account">Account</button>
+    <a href="#" aria-label="Bag">Bag<span class="bag-count">0</span></a>
+    <span style="font-size:0.75rem;color:var(--text-tertiary);margin-left:0.5rem;">US · $</span>
+  </div>
+</nav>
+
+<!-- ===== MOBILE NAV OVERLAY ===== -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-close" id="mobileClose" aria-label="Close menu">✕</button>
+  <a href="#new">New Arrivals</a>
+  <a href="#jewelry">Jewelry</a>
+  <a href="#collections">Collections</a>
+  <a href="#gifts-section">Gifts</a>
+  <a href="#story">Our World</a>
+  <a href="#">Size Guide</a>
+  <a href="#">Shipping & Returns</a>
+  <a href="#">Contact</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">New Collection · 2026</p>
+    <h1 class="hero-title">From the Mist,<br>Into the World</h1>
+    <p class="hero-subtitle">Sculptural jewelry shaped by stillness, balance, and the quiet movement of nature.</p>
+    <a href="#collections" class="hero-cta">Discover the Collection</a>
+  </div>
+  <div class="hero-scroll"><span></span></div>
+</section>
+
+<!-- ===== BRAND STORY ===== -->
+<section class="brand-story" id="story">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-visual fade-in">
+        <img src="CHANGAN-site-images/story.png" alt="Morning mist over dark mountains" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div class="story-text fade-in fade-in-delay-1">
+        <p class="story-chinese">多喜乐，长安宁。</p>
+        <h2 class="display-md story-heading">A wish.<br>A name.<br>A way of being.</h2>
+        <div class="story-divider"></div>
+        <div class="story-body">
+          <p class="body-lg">"May there be much joy, and lasting peace." CHANG'AN began as this wish. It became a person's name, then a way of returning to one's center.</p>
+          <p class="body-md" style="margin-top:var(--space-md);">The memory of clouds parting over dark mountains, of still water reflecting stone, of a quiet center held inside — these are not symbols to decode. They are forms translated into proportion, weight, texture, and line.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DESIGN CODES ===== -->
+<section class="design-codes" id="collections">
+  <div class="container">
+    <div class="section-header">
+      <p class="caption">Collections</p>
+      <h2>Three forms of quiet strength</h2>
+    </div>
+    <div class="codes-grid">
+      <div class="code-card fade-in">
+        <div class="code-visual mist-bg">
+          <img src="CHANGAN-site-images/mist.png" alt="Mist Collection" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <h3 class="code-name">Mist</h3>
+        <p class="code-desc">Surfaces that hold light like morning fog. Soft boundaries, depth in restraint.</p>
+        <a href="#" class="body-sm" style="display:inline-block;margin-top:var(--space-md);color:var(--matte-gold);border-bottom:1px solid var(--matte-gold);padding-bottom:2px;">Explore Mist →</a>
+      </div>
+      <div class="code-card fade-in fade-in-delay-1">
+        <div class="code-visual stone-bg">
+          <img src="CHANGAN-site-images/stone.png" alt="Stone Collection" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <h3 class="code-name">Stone</h3>
+        <p class="code-desc">Weight you feel before you see. Forms carved by patience, presence in gravity.</p>
+        <a href="#" class="body-sm" style="display:inline-block;margin-top:var(--space-md);color:var(--matte-gold);border-bottom:1px solid var(--matte-gold);padding-bottom:2px;">Explore Stone →</a>
+      </div>
+      <div class="code-card fade-in fade-in-delay-2">
+        <div class="code-visual current-bg">
+          <img src="CHANGAN-site-images/current.png" alt="Current Collection" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <h3 class="code-name">Current</h3>
+        <p class="code-desc">Lines that flow like water finding its path. Movement frozen in precious metal.</p>
+        <a href="#" class="body-sm" style="display:inline-block;margin-top:var(--space-md);color:var(--matte-gold);border-bottom:1px solid var(--matte-gold);padding-bottom:2px;">Explore Current →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FEATURED PRODUCTS ===== -->
+<section class="featured-products" id="jewelry">
+  <div class="container">
+    <div class="section-header">
+      <p class="caption">New Arrivals</p>
+      <h2>Selected pieces</h2>
+    </div>
+    <div class="products-grid">
+      <div class="product-card fade-in">
+        <div class="product-image">
+          <img src="CHANGAN-site-images/mist.png" alt="Mist Line Ring" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="product-meta">
+          <div>
+            <h3 class="product-name">Mist Line Ring</h3>
+            <p class="product-series">Mist · Sterling Silver</p>
+          </div>
+          <p class="product-price">$480</p>
+        </div>
+      </div>
+      <div class="product-card fade-in fade-in-delay-1">
+        <div class="product-image">
+          <img src="CHANGAN-site-images/stone.png" alt="Weight of Stone Pendant" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="product-meta">
+          <div>
+            <h3 class="product-name">Weight of Stone Pendant</h3>
+            <p class="product-series">Stone · 18K Gold</p>
+          </div>
+          <p class="product-price">$1,280</p>
+        </div>
+      </div>
+      <div class="product-card fade-in fade-in-delay-2">
+        <div class="product-image">
+          <img src="CHANGAN-site-images/current.png" alt="Current Drop Earrings" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="product-meta">
+          <div>
+            <h3 class="product-name">Current Drop Earrings</h3>
+            <p class="product-series">Current · Sterling Silver</p>
+          </div>
+          <p class="product-price">$620</p>
+        </div>
+      </div>
+      <div class="product-card fade-in fade-in-delay-1">
+        <div class="product-image">
+          <img src="CHANGAN-site-images/mist.png" alt="Mist Cuff Bracelet" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="product-meta">
+          <div>
+            <h3 class="product-name">Mist Cuff Bracelet</h3>
+            <p class="product-series">Mist · Sterling Silver</p>
+          </div>
+          <p class="product-price">$780</p>
+        </div>
+      </div>
+      <div class="product-card fade-in fade-in-delay-2">
+        <div class="product-image">
+          <img src="CHANGAN-site-images/stone.png" alt="Stone Solitaire Ring" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="product-meta">
+          <div>
+            <h3 class="product-name">Stone Solitaire Ring</h3>
+            <p class="product-series">Stone · 18K Gold, Jade</p>
+          </div>
+          <p class="product-price">$2,400</p>
+        </div>
+      </div>
+      <div class="product-card fade-in fade-in-delay-3">
+        <div class="product-image">
+          <img src="CHANGAN-site-images/current.png" alt="Current Flow Necklace" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="product-meta">
+          <div>
+            <h3 class="product-name">Current Flow Necklace</h3>
+            <p class="product-series">Current · Sterling Silver</p>
+          </div>
+          <p class="product-price">$890</p>
+        </div>
+      </div>
+    </div>
+    <div class="view-all">
+      <a href="#">View All Jewelry</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MATERIALS & CRAFT ===== -->
+<section class="materials">
+  <div class="container">
+    <div class="materials-grid">
+      <div class="materials-text fade-in">
+        <p class="caption">Materials &amp; Craft</p>
+        <h2 class="display-md">Made to be felt.<br>Made to endure.</h2>
+        <p class="body-lg" style="margin-top:var(--space-lg);">Precious metals, considered stones, and finishes developed for depth rather than glare. Every surface is the result of decisions about how light should fall, how weight should register on skin, and how a piece should age with its wearer.</p>
+        <div class="materials-list">
+          <div class="material-item">
+            <h4>Metals</h4>
+            <p>Sterling silver 925, 18K yellow gold, platinum 950</p>
+          </div>
+          <div class="material-item">
+            <h4>Stones</h4>
+            <p>Jade, black onyx, pearl, ethically sourced diamonds</p>
+          </div>
+          <div class="material-item">
+            <h4>Finishes</h4>
+            <p>Satin, brushed matte, mist-polished, dark patina</p>
+          </div>
+          <div class="material-item">
+            <h4>Made in</h4>
+            <p>Handcrafted in our studio. Each piece signed and numbered.</p>
+          </div>
+        </div>
+      </div>
+      <div class="materials-visual fade-in fade-in-delay-1">
+        <img src="CHANGAN-site-images/macro.png" alt="Material surface textures" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WEAR YOUR CENTER ===== -->
+<section class="wear-center">
+  <div class="container">
+    <div class="section-header">
+      <p class="caption">Editorial</p>
+      <h2>Wear Your Center</h2>
+    </div>
+    <div class="editorial-grid">
+      <div class="editorial-card fade-in">
+        <div class="editorial-image"><img src="CHANGAN-site-images/onbody.png" alt="Wear Your Center" style="width:100%;height:100%;object-fit:cover;"></div>
+        <h3>The weight of small things</h3>
+        <p>A ring is not about size. It is about the moment you forget you are wearing it — and the moment you remember.</p>
+      </div>
+      <div class="editorial-card fade-in fade-in-delay-1">
+        <div class="editorial-image"><img src="CHANGAN-site-images/keyvisual.png" alt="How satin holds the light" style="width:100%;height:100%;object-fit:cover;"></div>
+        <h3>How satin holds the light</h3>
+        <p>A surface that refuses to be a mirror. It receives light gently, releases it slowly — the material equivalent of a held breath.</p>
+      </div>
+      <div class="editorial-card fade-in fade-in-delay-2">
+        <div class="editorial-image"><img src="CHANGAN-site-images/scale.png" alt="Three ways to wear the Mist ring" style="width:100%;height:100%;object-fit:cover;"></div>
+        <h3>Three ways to wear the Mist ring</h3>
+        <p>Alone against skin. Stacked with intention. Paired with silence. Your center, your choice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GIFTS ===== -->
+<section class="gifts" id="gifts-section">
+  <div class="container">
+    <div class="gifts-grid">
+      <div class="gifts-visual fade-in">
+        <img src="CHANGAN-site-images/gift.png" alt="Gift packaging" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div class="gifts-text fade-in fade-in-delay-1">
+        <p class="caption">Gifts</p>
+        <h2 class="display-md">For a threshold worth remembering.</h2>
+        <p class="body-lg" style="margin-top:var(--space-lg);">Mark a beginning, a return, or a quiet decision. Every CHANG'AN gift arrives in our signature box, with a handwritten note, privacy wrapping, and a gift receipt that never shows the price.</p>
+        <div class="gift-features">
+          <div class="gift-feature">
+            <h4>Gift Box</h4>
+            <p>Matte black, suede-lined, with care card and polishing cloth</p>
+          </div>
+          <div class="gift-feature">
+            <h4>Privacy</h4>
+            <p>Plain outer packaging. Price never shown on any included document</p>
+          </div>
+          <div class="gift-feature">
+            <h4>Note</h4>
+            <p>Handwritten on our card. Your words, our pen</p>
+          </div>
+          <div class="gift-feature">
+            <h4>Easy Exchange</h4>
+            <p>Recipient can exchange without contacting the sender. 30 days, no questions</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRUST BAR ===== -->
+<section class="trust-bar">
+  <div class="container">
+    <div class="trust-items">
+      <div class="trust-item">
+        <div class="trust-icon">⟡</div>
+        <span>Handcrafted</span>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">↻</div>
+        <span>30-Day Returns</span>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">◈</div>
+        <span>1-Year Warranty</span>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">✈</div>
+        <span>Worldwide Shipping</span>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">◇</div>
+        <span>Secure Checkout</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== JOURNAL ===== -->
+<section class="journal" id="new">
+  <div class="container">
+    <div class="section-header">
+      <p class="caption">Journal</p>
+      <h2>Notes from the studio</h2>
+    </div>
+    <div class="journal-grid">
+      <div class="journal-card fade-in">
+        <div class="journal-image" style="background:linear-gradient(135deg,#1a1e22,#14181c);"></div>
+        <p class="journal-category">Form & Feeling</p>
+        <h4>CHANG'AN Is a Name</h4>
+      </div>
+      <div class="journal-card fade-in fade-in-delay-1">
+        <div class="journal-image" style="background:linear-gradient(135deg,#1a1814,#0d0a08);"></div>
+        <p class="journal-category">Studio</p>
+        <h4>How Satin Receives the Light</h4>
+      </div>
+      <div class="journal-card fade-in fade-in-delay-2">
+        <div class="journal-image" style="background:linear-gradient(135deg,#14181c,#0d1115);"></div>
+        <p class="journal-category">Object & Body</p>
+        <h4>The Weight of Small Things</h4>
+      </div>
+      <div class="journal-card fade-in fade-in-delay-3">
+        <div class="journal-image" style="background:linear-gradient(135deg,#1a1e22,#14181c);"></div>
+        <p class="journal-category">Service</p>
+        <h4>International Ring Size Guide</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NEWSLETTER ===== -->
+<section class="newsletter">
+  <div class="container-narrow">
+    <p style="font-family:var(--font-display);font-size:1.25rem;font-style:italic;color:var(--matte-gold);margin-bottom:var(--space-sm);">Enter the quiet.</p>
+    <h2>Stay connected</h2>
+    <p>Private previews, new objects, and notes from the CHANG'AN world. Sent with restraint — never more than twice a month.</p>
+    <form class="newsletter-form" onsubmit="event.preventDefault(); this.querySelector('input').value='';">
+      <input type="email" placeholder="Your email address" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo" style="margin-bottom:var(--space-md);display:block;">
+          <img src="CHANGAN-site-images/logo-an.png" alt="CHANG'AN" style="height:3rem;">
+        </a>
+        <p>A wish, a name, a way of being. Sculptural jewelry shaped by stillness, balance, and the quiet movement of nature.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#">New Arrivals</a></li>
+          <li><a href="#">Rings</a></li>
+          <li><a href="#">Earrings</a></li>
+          <li><a href="#">Necklaces</a></li>
+          <li><a href="#">Bracelets</a></li>
+          <li><a href="#">All Jewelry</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="#">The Story</a></li>
+          <li><a href="#">Materials &amp; Craft</a></li>
+          <li><a href="#">Journal</a></li>
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="#">Care</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Shipping &amp; Returns</a></li>
+          <li><a href="#">Duties &amp; Taxes</a></li>
+          <li><a href="#">Warranty &amp; Repair</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CHANG'AN. All rights reserved.</span>
+      <ul class="footer-bottom-links">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Accessibility</a></li>
+        <li><span style="color:var(--text-inverse-dim);">US · USD $</span></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== SCRIPTS ===== -->
+<script>
+// Nav scroll effect
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 100);
+});
+
+// Mobile nav
+const navToggle = document.getElementById('navToggle');
+const mobileNav = document.getElementById('mobileNav');
+const mobileClose = document.getElementById('mobileClose');
+navToggle.addEventListener('click', () => mobileNav.classList.add('open'));
+mobileClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+mobileNav.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => mobileNav.classList.remove('open'));
+});
+
+// Intersection Observer for fade-in animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
