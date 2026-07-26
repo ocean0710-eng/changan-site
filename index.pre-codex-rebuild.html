@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>CHANG'AN — Wear Your Center</title>
+<meta name="description" content="Contemporary Eastern luxury jewelry. Gemstones, jade, precious metals, and fine woodcraft.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:ital,opsz,wght@0,14..32,200;0,14..32,300;0,14..32,400;0,14..32,500;1,14..32,300;1,14..32,400&family=Noto+Serif+SC:wght@300;400;500&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+--fd:'Cormorant Garamond','Georgia',serif;--fz:'Noto Serif SC','STSong',serif;
+--fb:'Inter',-apple-system,'Helvetica Neue',sans-serif;
+--ink:#07111B;--db:#0E1924;--wm:#F4F0E8;--pw:#FBFAF7;--sg:#77736D;
+--gold:#B89355;--gdim:#A07D40;--cin:#8F2F26;
+--t1:#1a1a1a;--t2:rgba(26,26,26,0.6);--t3:rgba(26,26,26,0.35);
+--ti:#EEEAE2;--tid:rgba(238,234,226,0.6);
+--gx:clamp(1rem,4vw,4rem);--nh:4rem;--eo:cubic-bezier(0.19,1,0.22,1);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--fb);color:var(--t1);background:var(--pw);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{border:none;background:none;cursor:pointer;font-family:inherit}
+.cx{max-width:1400px;margin:0 auto;padding:0 var(--gx)}.cn{max-width:860px;margin:0 auto;padding:0 var(--gx)}.hide{display:none!important}
+
+/* Type */
+.dxl{font-family:var(--fd);font-size:clamp(2.5rem,6vw,5rem);font-weight:300;line-height:1.06;letter-spacing:-0.01em}
+:root[lang=zh] .dxl{font-family:var(--fz);font-size:clamp(2rem,5vw,3.5rem);font-weight:400}
+.dlg{font-family:var(--fd);font-size:clamp(2rem,4vw,3.2rem);font-weight:300;line-height:1.1}
+.dmd{font-family:var(--fd);font-size:clamp(1.5rem,2.5vw,2rem);font-weight:400;line-height:1.15}
+:root[lang=zh] .dmd{font-family:var(--fz)}
+.bl{font-size:1.1rem;font-weight:300;line-height:1.75}
+.bm{font-size:0.95rem;font-weight:300;line-height:1.65}
+.bs{font-size:0.8rem;font-weight:300;line-height:1.5}
+.cap{font-size:0.68rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase}
+:root[lang=zh] .cap{text-transform:none;letter-spacing:0.06em}
+.sec-pad{padding:clamp(4rem,8vw,7rem) 0}
+.divider{width:3rem;height:1px;background:var(--gold)}
+
+.dark{background:var(--ink);color:var(--ti)}.dark .bl,.dark .bm{color:var(--tid)}.dark .cap{color:var(--gold)}.dark h2,.dark h3{color:var(--ti)}
+.light{background:var(--pw);color:var(--t1)}.light .bl,.light .bm{color:var(--t2)}.light .cap{color:var(--sg)}.light h2,.light h3{color:var(--t1)}
+
+.ann{background:var(--ink);color:var(--tid);text-align:center;padding:0.45rem var(--md);font-size:0.68rem;font-weight:300;letter-spacing:0.03em}
+.ann a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
+
+/* Header */
+.header{position:sticky;top:0;z-index:100;background:var(--pw);border-bottom:1px solid rgba(0,0,0,0.05)}
+.hi{max-width:1400px;margin:0 auto;padding:0 var(--gx);display:flex;align-items:center;height:var(--nh);gap:var(--xl)}
+.wm{font-family:var(--fd);font-size:1.5rem;font-weight:500;letter-spacing:0.1em;color:var(--ink);flex-shrink:0}
+.nm{display:flex;gap:var(--xl);list-style:none;flex:1}
+.nm>li{position:relative}
+.nm>li>a{font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--t1);padding:0.35rem 0;display:block;transition:color 0.25s}
+.nm>li>a:hover{color:var(--gold)}
+.nu{display:flex;gap:var(--md);align-items:center;flex-shrink:0}
+.nu a,.nu button{font-size:0.7rem;font-weight:400;color:var(--t2);transition:color 0.25s}
+.nu a:hover,.nu button:hover{color:var(--t1)}
+.lang-t{font-size:0.65rem;font-weight:500;color:var(--gold);padding:0.2rem 0.5rem;border:1px solid var(--gold);transition:all 0.3s}
+.lang-t:hover{background:var(--gold);color:var(--pw)}
+.mega{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:var(--pw);border:1px solid rgba(0,0,0,0.06);box-shadow:0 20px 60px rgba(0,0,0,0.08);padding:var(--xl);display:none;min-width:680px;z-index:99}
+.nm>li:hover .mega{display:flex;gap:var(--xl)}
+.mc{flex:1}.mc h4{font-size:0.62rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:var(--sm)}
+.mc ul{list-style:none}.mc li{margin-bottom:0.35rem}
+.mc a{font-size:0.78rem;color:var(--t2);transition:color 0.2s}.mc a:hover{color:var(--t1)}
+.nav-toggle{display:none;flex-direction:column;gap:5px;padding:4px}
+.nav-toggle span{display:block;width:20px;height:1.5px;background:var(--ink)}
+.mnav{position:fixed;inset:0;background:var(--pw);z-index:200;padding:var(--xl);transform:translateX(100%);transition:transform 0.4s var(--eo);overflow-y:auto}
+.mnav.open{transform:translateX(0)}
+.mnav .mclose{float:right;font-size:1.5rem;color:var(--t2);padding:var(--sm)}
+.ms{margin-bottom:var(--xl)}.ms h4{font-size:0.62rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:var(--sm)}
+.ms a{display:block;font-size:1.1rem;color:var(--t1);padding:0.5rem 0;border-bottom:1px solid rgba(0,0,0,0.04)}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:72vh;max-height:820px;background:var(--ink);overflow:hidden;position:relative}
+.hero-text{display:flex;flex-direction:column;justify-content:center;padding:var(--2xl) var(--gx) var(--2xl) var(--2xl);z-index:2}
+.hero-text .eyebrow{font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:var(--md)}
+.hero-text h1{font-family:var(--fd);font-size:clamp(2.2rem,4.5vw,4rem);font-weight:300;font-style:italic;line-height:1.06;color:var(--ti);margin-bottom:var(--sm)}
+:root[lang=zh] .hero-text h1{font-family:var(--fz);font-style:normal;font-size:clamp(1.8rem,3.5vw,3rem)}
+.hero-text .hero-sub{font-size:1rem;font-weight:300;line-height:1.7;color:var(--tid);max-width:420px;margin-bottom:var(--md)}
+.hero-text .hero-cta{display:inline-block;padding:0.8rem 2.4rem;font-size:0.7rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--ti);border:1px solid var(--gold);align-self:flex-start;transition:all 0.4s var(--eo)}
+.hero-text .hero-cta:hover{background:var(--gold);color:var(--ink)}
+.hero-img{overflow:hidden;position:relative}
+.hero-img img{width:100%;height:100%;object-fit:cover}
+.hero-mist{position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(244,240,232,0.06),transparent 70%);animation:mist-drift 8s var(--eo) forwards;pointer-events:none;opacity:0}
+@keyframes mist-drift{0%{opacity:0;transform:scale(1.2)}50%{opacity:1}100%{opacity:0.5;transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){.hero-mist{animation:none;opacity:0.3}}
+
+.sh{margin-bottom:var(--2xl)}.sh .cap{margin-bottom:var(--sm)}
+.sh h2{font-family:var(--fd);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:300;line-height:1.15}
+:root[lang=zh] .sh h2{font-family:var(--fz)}
+
+/* Six States — 2×3 grid */
+.cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--lg)}
+.ccard{position:relative;aspect-ratio:3/4;overflow:hidden;cursor:pointer;transition:transform 0.5s var(--eo)}
+.ccard:hover{transform:translateY(-6px)}
+.ccard img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s}
+.ccard:hover img{transform:scale(1.05)}
+.ccard .cl{position:absolute;bottom:0;left:0;right:0;padding:var(--lg);background:linear-gradient(to top,rgba(7,17,27,0.9),transparent)}
+.ccard .cl .cch{font-family:var(--fz);font-size:2.2rem;font-weight:300;color:var(--gold);line-height:1}
+.ccard .cl h4{font-family:var(--fd);font-size:0.9rem;font-weight:400;color:var(--ti);margin-top:0.2rem}
+:root[lang=zh] .ccard .cl h4{font-family:var(--fz);font-size:0.8rem}
+.ccard .cl p{font-size:0.62rem;color:var(--tid);margin-top:0.1rem}
+
+/* Shop by Material */
+.stiles{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--md)}
+.stile{position:relative;min-height:280px;overflow:hidden;cursor:pointer;transition:transform 0.4s var(--eo)}
+.stile:hover{transform:scale(1.02)}
+.stile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.stile .tl{position:absolute;bottom:var(--md);left:var(--md);z-index:2}
+.stile .tl h3{font-family:var(--fd);font-size:1.2rem;font-weight:400;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,0.6)}
+.stile .tl span{font-size:0.62rem;color:rgba(255,255,255,0.75);letter-spacing:0.06em}
+.stile::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.5),transparent 55%)}
+
+/* Products — 4-col */
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--lg)}
+.pcard{transition:transform 0.4s var(--eo)}.pcard:hover{transform:translateY(-4px)}
+.pimg{aspect-ratio:3/4;margin-bottom:var(--sm);background:var(--wm);overflow:hidden}
+.pmeta{padding-top:var(--sm)}
+.pname{font-family:var(--fd);font-size:1rem;font-weight:400;margin-bottom:0.1rem}
+:root[lang=zh] .pname{font-family:var(--fz)}
+.pser{font-size:0.6rem;font-weight:400;letter-spacing:0.06em;text-transform:uppercase;color:var(--t3);margin-bottom:0.2rem}
+.pprice{font-size:0.85rem;font-weight:400;color:var(--sg)}
+.va{text-align:center;margin-top:var(--xl)}
+.va a{font-size:0.7rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--t1);border-bottom:1px solid var(--gold);padding-bottom:0.25rem}
+
+/* Materials */
+.mg{display:grid;grid-template-columns:1fr 1fr;gap:var(--2xl);align-items:center}
+.mv{aspect-ratio:4/5;max-height:65vh;overflow:hidden}
+.mlist{display:grid;grid-template-columns:1fr 1fr;gap:var(--md);margin-top:var(--xl)}
+.mi{padding:var(--md) 0;border-top:0.5px solid rgba(238,234,226,0.1)}
+.mi h4{font-size:0.68rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.3rem;color:var(--gold)}
+.mi p{font-size:0.76rem;font-weight:300;line-height:1.6;color:var(--tid)}
+
+/* Wear center */
+.wear{padding:clamp(4rem,7vw,6rem) 0;text-align:center}
+.wear h2{font-family:var(--fd);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:300;font-style:italic;margin-bottom:var(--md)}
+:root[lang=zh] .wear h2{font-family:var(--fz);font-style:normal}
+.wear p{font-size:1rem;color:var(--tid);max-width:460px;margin:0 auto var(--lg)}
+.wear .gl{width:4rem;height:1px;background:var(--gold);margin:0 auto var(--lg)}
+
+/* Gifts */
+.gg{display:grid;grid-template-columns:1fr 1fr;gap:var(--2xl);align-items:center}
+.gv{aspect-ratio:4/5;overflow:hidden}
+.gf{display:grid;grid-template-columns:1fr 1fr;gap:var(--sm);margin-top:var(--xl)}
+.gfi{padding:var(--md);border:1px solid rgba(238,234,226,0.08);transition:border-color 0.4s}
+.gfi:hover{border-color:var(--gold)}
+.gfi h4{font-size:0.65rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.25rem}
+.gfi p{font-size:0.72rem;font-weight:300;line-height:1.6;color:var(--tid)}
+
+.trust{padding:var(--lg) 0;border-top:1px solid rgba(0,0,0,0.05);border-bottom:1px solid rgba(0,0,0,0.05)}
+.ti{display:flex;justify-content:center;gap:var(--xl);flex-wrap:wrap}
+.tii{display:flex;align-items:center;gap:0.5rem}
+.tic{font-size:0.68rem;color:var(--gold)}.tii span{font-size:0.68rem;font-weight:400;color:var(--t2)}
+
+.jg{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--lg);margin-top:var(--xl)}
+.jc{transition:transform 0.4s}.jc:hover{transform:translateY(-4px)}
+.ji{aspect-ratio:4/3;margin-bottom:var(--sm);background:var(--wm)}
+.jcat{font-size:0.58rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--sg);margin-bottom:0.25rem}
+.jc h4{font-family:var(--fd);font-size:1rem;font-weight:400;line-height:1.3}
+:root[lang=zh] .jc h4{font-family:var(--fz)}
+
+.nl{padding:var(--2xl) 0;text-align:center}
+.nl h2{font-family:var(--fd);font-size:1.8rem;font-weight:300;font-style:italic;margin-bottom:var(--sm)}
+:root[lang=zh] .nl h2{font-family:var(--fz);font-style:normal}
+.nl p{font-size:0.9rem;max-width:400px;margin:0 auto var(--lg);line-height:1.7}
+.nlf{display:flex;gap:var(--sm);max-width:420px;margin:0 auto}
+.nlf input{flex:1;padding:0.8rem 1.2rem;background:transparent;border:1px solid rgba(238,234,226,0.2);color:var(--ti);font-family:var(--fb);font-size:0.85rem;outline:none}
+.nlf input::placeholder{color:var(--tid)}.nlf input:focus{border-color:var(--gold)}
+.nlf button{padding:0.8rem 1.6rem;background:var(--gold);color:var(--ink);font-size:0.68rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase}
+.nlf button:hover{background:var(--gdim)}
+
+.footer{padding:var(--2xl) 0 var(--xl);font-size:0.72rem}
+.fg{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:var(--xl);margin-bottom:var(--2xl)}
+.fb p{max-width:260px;line-height:1.7;color:var(--tid)}
+.fc h4{font-size:0.62rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:var(--md)}
+.fc ul{list-style:none}.fc li{margin-bottom:0.45rem}
+.fc a{color:var(--tid)}.fc a:hover{color:var(--ti)}
+.fbot{border-top:1px solid rgba(238,234,226,0.06);padding-top:var(--lg);display:flex;justify-content:space-between;flex-wrap:wrap;gap:var(--md);font-size:0.65rem}
+.fbl{display:flex;gap:var(--lg);list-style:none}.fbl a{color:var(--tid)}.fbl a:hover{color:var(--ti)}
+
+/* Subpages */
+.page-hero{background:var(--ink);padding:var(--2xl) var(--gx);text-align:center;min-height:35vh;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-top:var(--nh)}
+.page-hero h1{font-family:var(--fd);font-size:clamp(2rem,4vw,3.5rem);font-weight:300;color:var(--ti);margin-bottom:var(--sm)}
+.page-hero p{font-size:1rem;color:var(--tid);max-width:560px}
+.coll-hero{background:var(--ink);min-height:45vh;display:flex;align-items:center;padding:var(--2xl) var(--gx);margin-top:var(--nh)}
+.ch-char{font-family:var(--fz);font-size:6rem;font-weight:300;color:var(--gold);line-height:1;margin-bottom:var(--sm)}
+.ch-text h1{font-family:var(--fd);font-size:2.5rem;font-weight:300;color:var(--ti)}
+.ch-text p{color:var(--tid)}
+.coll-filters{display:flex;gap:var(--md);padding:var(--md) 0;flex-wrap:wrap}
+.coll-filters select{font-size:0.72rem;padding:0.4rem 0.8rem;border:1px solid rgba(0,0,0,0.1);background:var(--pw);font-family:var(--fb)}
+
+.pdp{display:grid;grid-template-columns:1.2fr 0.8fr;gap:var(--2xl);margin-top:calc(var(--nh) + var(--xl))}
+.pdp-g{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--sm)}
+.pdp-g img{aspect-ratio:1;object-fit:cover}
+.pdp-i{position:sticky;top:calc(var(--nh) + var(--xl));align-self:start}
+.pdp-i .pcoll{font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--sg)}
+.pdp-i h1{font-family:var(--fd);font-size:2rem;font-weight:400;margin:var(--xs) 0}
+.pdp-mat{font-size:0.85rem;color:var(--t2);margin-bottom:var(--sm)}
+.pdp-price{font-size:1.5rem;font-weight:300;margin-bottom:var(--lg)}
+.pdp-sel{margin-bottom:var(--md)}
+.pdp-sel label{font-size:0.68rem;font-weight:500;letter-spacing:0.06em;display:block;margin-bottom:var(--xs)}
+.pdp-sel select{width:100%;padding:0.6rem;border:1px solid rgba(0,0,0,0.1);font-family:var(--fb)}
+.add-bag{width:100%;padding:1rem;background:var(--ink);color:var(--ti);font-size:0.8rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;text-align:center;transition:background 0.3s;cursor:pointer}
+.add-bag:hover{background:var(--db)}
+.pdp-dis{font-size:0.75rem;color:var(--t2);margin-top:var(--sm)}
+.pdp-acc{margin-top:var(--xl)}
+.pdp-acc details{border-top:1px solid rgba(0,0,0,0.06);padding:var(--sm) 0}
+.pdp-acc summary{font-size:0.72rem;font-weight:500;letter-spacing:0.06em;cursor:pointer}
+.pdp-acc p{font-size:0.78rem;line-height:1.7;color:var(--t2);padding-bottom:var(--sm)}
+
+.cart-layout{display:grid;grid-template-columns:1fr 380px;gap:var(--2xl);margin-top:calc(var(--nh) + var(--xl))}
+.cart-items{border-top:1px solid rgba(0,0,0,0.06)}
+.cart-item{display:grid;grid-template-columns:100px 1fr auto;gap:var(--md);padding:var(--md) 0;border-bottom:1px solid rgba(0,0,0,0.06);align-items:center}
+.cart-item img{aspect-ratio:1;object-fit:cover}
+.cart-item h4{font-family:var(--fd);font-size:1rem;font-weight:400}
+.cart-item .cim{font-size:0.72rem;color:var(--t2)}
+.cart-summary{background:var(--wm);padding:var(--xl);position:sticky;top:calc(var(--nh) + var(--xl))}
+.cart-summary h3{font-size:1rem;font-weight:500;margin-bottom:var(--md)}
+.cs-row{display:flex;justify-content:space-between;font-size:0.8rem;padding:0.4rem 0}
+.cs-total{font-weight:500;border-top:1px solid rgba(0,0,0,0.1);padding-top:var(--sm);margin-top:var(--sm)}
+.chk-btn{display:block;width:100%;padding:0.9rem;background:var(--ink);color:var(--ti);text-align:center;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;margin-top:var(--md)}
+
+.chk-steps{display:flex;gap:var(--md);margin:calc(var(--nh) + var(--xl)) 0 var(--xl);border-bottom:1px solid rgba(0,0,0,0.06);padding-bottom:var(--md)}
+.chk-steps span{font-size:0.72rem;color:var(--t3)}.chk-steps span.on{color:var(--ink);font-weight:500}
+.chk-grid{display:grid;grid-template-columns:1fr 380px;gap:var(--2xl)}
+.chk-form h3{font-size:1.1rem;font-weight:400;margin-bottom:var(--md)}
+.chk-form label{font-size:0.7rem;font-weight:500;display:block;margin-bottom:var(--xs);margin-top:var(--sm)}
+.chk-form input,.chk-form select{width:100%;padding:0.65rem;border:1px solid rgba(0,0,0,0.1);font-family:var(--fb);font-size:0.85rem}
+.chk-form .fr{display:grid;grid-template-columns:1fr 1fr;gap:var(--sm)}
+
+/* About */
+.ab-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--2xl);align-items:center}
+.ab-img{aspect-ratio:3/4;overflow:hidden}
+.ab-char{font-family:var(--fz);font-size:4rem;font-weight:300;color:var(--gold);line-height:1;margin-bottom:var(--md)}
+.ab-block{padding:var(--lg) 0;border-top:1px solid rgba(0,0,0,0.06)}
+.ab-block h3{font-family:var(--fd);font-size:1.3rem;font-weight:400;margin-bottom:var(--sm)}
+:root[lang=zh] .ab-block h3{font-family:var(--fz)}
+
+@media(max-width:1200px){.cgrid{grid-template-columns:repeat(3,1fr)}.stiles{grid-template-columns:repeat(2,1fr)}.pgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){
+.hero{grid-template-columns:1fr;min-height:auto}.hero-text{padding:var(--xl) var(--gx);order:1}.hero-img{aspect-ratio:3/4;order:-1}
+.nm{display:none}.nav-toggle{display:flex}
+.cgrid{grid-template-columns:repeat(2,1fr)}.pgrid{grid-template-columns:repeat(2,1fr)}
+.stiles{grid-template-columns:repeat(2,1fr)}
+.mg,.gg,.ab-grid,.pdp,.cart-layout,.chk-grid{grid-template-columns:1fr}
+.pdp-g{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+.pgrid{grid-template-columns:1fr;max-width:400px;margin:0 auto}
+.cgrid{grid-template-columns:repeat(2,1fr)}
+.stiles{grid-template-columns:1fr;max-width:400px;margin:0 auto}
+.mlist,.gf{grid-template-columns:1fr}.nlf{flex-direction:column}
+:root{--2xl:4rem}
+}
+
+.fi{opacity:0;transform:translateY(20px);transition:opacity 0.6s var(--eo),transform 0.6s var(--eo)}
+.fi.v{opacity:1;transform:translateY(0)}
+.d1{transition-delay:0.1s}.d2{transition-delay:0.2s}.d3{transition-delay:0.3s}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important}}
+</style>
+</head>
+<body>
+
+<div class="ann"><span data-i18n="banner">Complimentary International Shipping on Orders Over $300 · </span><a href="#" data-i18n="learnmore">Learn more</a></div>
+
+<header class="header"><div class="hi">
+<button class="nav-toggle" id="nt" aria-label="Menu"><span></span><span></span><span></span></button>
+<a href="#home" class="wm">CHANG'AN</a>
+<ul class="nm">
+<li><a href="#" data-i18n="n_new">New In</a></li>
+<li><a href="#" data-i18n="n_coll">Collections</a>
+<div class="mega">
+<div class="mc"><h4>DUO 多</h4><ul><li><a href="#collection/duo">Abundance</a></li></ul></div>
+<div class="mc"><h4>XI 喜</h4><ul><li><a href="#collection/xi">Joy</a></li></ul></div>
+<div class="mc"><h4>LE 乐</h4><ul><li><a href="#collection/le">Ease</a></li></ul></div>
+<div class="mc"><h4>CHANG 长</h4><ul><li><a href="#collection/chang">Enduring</a></li></ul></div>
+<div class="mc"><h4>AN 安</h4><ul><li><a href="#collection/an">Grounded Presence</a></li></ul></div>
+<div class="mc"><h4>NING 宁</h4><ul><li><a href="#collection/ning">Stillness</a></li></ul></div>
+</div></li>
+<li><a href="#" data-i18n="n_gems">Gemstones</a></li>
+<li><a href="#" data-i18n="n_jade">Jade</a></li>
+<li><a href="#" data-i18n="n_jewelry">Jewelry</a></li>
+<li><a href="#" data-i18n="n_wood">Woodcraft</a></li>
+<li><a href="#" data-i18n="n_gifts">Gifts</a></li>
+<li><a href="#about" data-i18n="n_about">About</a></li>
+</ul>
+<div class="nu">
+<a href="#" data-i18n="search">Search</a>
+<a href="#" data-i18n="account">Account</a>
+<a href="#cart" data-i18n="bag" style="position:relative">Bag<span id="bc" style="font-size:0.6rem;color:var(--gold);margin-left:0.2rem">0</span></a>
+<button class="lang-t" id="langToggle" data-i18n="lang_label">中文</button>
+</div>
+</div></header>
+
+<div class="mnav" id="mn">
+<button class="mclose" id="mc">✕</button>
+<div class="ms"><h4 data-i18n="m_shop">Shop by Material</h4><a href="#">Gemstones</a><a href="#">Jade</a><a href="#">Jewelry</a><a href="#">Woodcraft</a></div>
+<div class="ms"><h4 data-i18n="m_coll">Six Collections</h4><a href="#collection/duo">DUO 多</a><a href="#collection/xi">XI 喜</a><a href="#collection/le">LE 乐</a><a href="#collection/chang">CHANG 长</a><a href="#collection/an">AN 安</a><a href="#collection/ning">NING 宁</a></div>
+<div class="ms"><h4 data-i18n="m_more">More</h4><a href="#about">About</a><a href="#cart">Bag</a><a href="#">Size Guide</a><a href="#">Contact</a></div>
+</div>
+
+<!-- HOME -->
+<div id="page-home">
+<section class="hero"><div class="hero-mist"></div>
+<div class="hero-text"><p class="eyebrow" data-i18n="hero_eyebrow">CHANG'AN Collection · 2026</p><h1 data-i18n="hero_title">From the Mist,<br>Into the World</h1><p class="hero-sub" data-i18n="hero_sub">Jewelry and objects for a life held in balance.</p><a href="#products" class="hero-cta" data-i18n="hero_cta">Explore New Arrivals</a></div>
+<div class="hero-img"><img src="CHANGAN-site-images/hero.png" alt="CHANG'AN"></div>
+</section>
+
+<section class="sec-pad dark"><div class="cn" style="text-align:center">
+<h2 class="dlg" data-i18n="tagline">多喜乐，长安宁 — A wish for lasting peace.</h2>
+<p class="bl" style="margin-top:var(--md);" data-i18n="tagline_sub">CHANG'AN began as this blessing. It became a name, then a way of returning to one's center — and now, a way of wearing that stillness.</p>
+<a href="#about" class="bs" style="display:inline-block;margin-top:var(--md);color:var(--gold);border-bottom:1px solid var(--gold);padding-bottom:2px;" data-i18n="tagline_link">Discover Our Story →</a>
+</div></section>
+
+<section class="sec-pad light"><div class="cx">
+<div class="sh"><p class="cap" data-i18n="series_label">Six States, One Wish</p><h2 data-i18n="series_title">Collections</h2></div>
+<div class="cgrid">
+<a href="#collection/duo" class="ccard fi"><img src="CHANGAN-site-images/macro.png" alt=""><div class="cl"><div class="cch">多</div><h4 data-i18n="s_duo">DUO · Abundance</h4><p>Layered turquoise, gemstone groupings</p></div></a>
+<a href="#collection/xi" class="ccard fi d1"><img src="CHANGAN-site-images/stone.png" alt=""><div class="cl"><div class="cch">喜</div><h4 data-i18n="s_xi">XI · Joy</h4><p>Nanhong Agate and warm gold</p></div></a>
+<a href="#collection/le" class="ccard fi d2"><img src="CHANGAN-site-images/current.png" alt=""><div class="cl"><div class="cch">乐</div><h4 data-i18n="s_le">LE · Ease</h4><p>Articulated earrings, moving forms</p></div></a>
+<a href="#collection/chang" class="ccard fi"><img src="CHANGAN-site-images/mist.png" alt=""><div class="cl"><div class="cch">长</div><h4 data-i18n="s_chang">CHANG · Enduring</h4><p>Continuous line, elongated form</p></div></a>
+<a href="#collection/an" class="ccard fi d1"><img src="CHANGAN-site-images/keyvisual.png" alt=""><div class="cl"><div class="cch">安</div><h4 data-i18n="s_an">AN · Grounded Presence</h4><p>Hetian Jade with weight</p></div></a>
+<a href="#collection/ning" class="ccard fi d2"><img src="CHANGAN-site-images/scale.png" alt=""><div class="cl"><div class="cch">宁</div><h4 data-i18n="s_ning">NING · Stillness</h4><p>Silver, lucid jade, negative space</p></div></a>
+</div></div></section>
+
+<section class="sec-pad light"><div class="cx">
+<div class="sh"><p class="cap" data-i18n="mat_shop">Shop by Material</p><h2 data-i18n="mat_shop_t">Four materials, one language</h2></div>
+<div class="stiles">
+<div class="stile fi"><img src="CHANGAN-site-images/macro.png" alt=""><div class="tl"><h3 data-i18n="cat_gems">Gemstones</h3><span>Vivid minerals, each a universe</span></div></div>
+<div class="stile fi d1"><img src="CHANGAN-site-images/stone.png" alt=""><div class="tl"><h3 data-i18n="cat_jade">Jade</h3><span>Stillness carved in stone</span></div></div>
+<div class="stile fi d2"><img src="CHANGAN-site-images/onbody.png" alt=""><div class="tl"><h3 data-i18n="cat_jewelry">Jewelry</h3><span>Forged by hand, worn with intention</span></div></div>
+<div class="stile fi d3"><img src="CHANGAN-site-images/gift.png" alt=""><div class="tl"><h3 data-i18n="cat_wood">Woodcraft</h3><span>Warmth shaped by memory</span></div></div>
+</div></div></section>
+
+<section class="sec-pad light" id="products"><div class="cx">
+<div class="sh"><p class="cap" data-i18n="prod_label">New Arrivals</p><h2 data-i18n="prod_title">Selected works</h2></div>
+<div class="pgrid">
+<a href="#product/1" class="pcard fi"><div class="pimg"><img src="CHANGAN-site-images/mist.png" alt=""></div><div class="pmeta"><h3 class="pname" data-i18n="p1">Turquoise 安 Pendant</h3><p class="pser">安 · Gemstone · 925 Silver</p><p class="pprice">$680</p></div></a>
+<a href="#product/2" class="pcard fi d1"><div class="pimg"><img src="CHANGAN-site-images/stone.png" alt=""></div><div class="pmeta"><h3 class="pname" data-i18n="p2">Hetian Jade 长 Bracelet</h3><p class="pser">长 · Jade · 18K Gold</p><p class="pprice">$1,580</p></div></a>
+<a href="#product/3" class="pcard fi d2"><div class="pimg"><img src="CHANGAN-site-images/current.png" alt=""></div><div class="pmeta"><h3 class="pname" data-i18n="p3">Gold 喜 Ring</h3><p class="pser">喜 · Jewelry · 18K Gold</p><p class="pprice">$2,200</p></div></a>
+<a href="#product/4" class="pcard fi d3"><div class="pimg"><img src="CHANGAN-site-images/mist.png" alt=""></div><div class="pmeta"><h3 class="pname" data-i18n="p4">Nanhong 乐 Earrings</h3><p class="pser">乐 · Gemstone · 925 Silver</p><p class="pprice">$520</p></div></a>
+<a href="#product/5" class="pcard fi"><div class="pimg"><img src="CHANGAN-site-images/stone.png" alt=""></div><div class="pmeta"><h3 class="pname" data-i18n="p5">Agarwood 宁 Necklace</h3><p class="pser">宁 · Wood · Silk Cord</p><p class="pprice">$890</p></div></a>
+<a href="#product/6" class="pcard fi d1"><div class="pimg"><img src="CHANGAN-site-images/current.png" alt=""></div><div class="pmeta"><h3 class="pname" data-i18n="p6">Jadeite 多 Bangle</h3><p class="pser">多 · Jade · 18K Gold</p><p class="pprice">$3,600</p></div></a>
+<a href="#product/7" class="pcard fi d2"><div class="pimg"><img src="CHANGAN-site-images/macro.png" alt=""></div><div class="pmeta"><h3 class="pname" data-i18n="p7">Silver 宁 Cuff</h3><p class="pser">宁 · Jewelry · 925 Silver</p><p class="pprice">$420</p></div></a>
+<a href="#product/8" class="pcard fi d3"><div class="pimg"><img src="CHANGAN-site-images/onbody.png" alt=""></div><div class="pmeta"><h3 class="pname" data-i18n="p8">Nánmù 长 Box</h3><p class="pser">长 · Wood · Golden Nánmù</p><p class="pprice">$1,150</p></div></a>
+</div></div></section>
+
+<section class="sec-pad dark"><div class="cx"><div class="mg">
+<div class="fi"><p class="cap" data-i18n="mat_label">Craft & Material Truth</p><h2 class="dmd">Made to be felt.<br>Made to endure.</h2><p class="bl" style="margin-top:var(--md);">Four material families — each selected at source, worked by hand. Natural variation is the signature of the real.</p>
+<div class="mlist">
+<div class="mi"><h4 data-i18n="mm1">Gemstones</h4><p data-i18n="mm1d">Turquoise from Hubei, Nanhong from Sichuan</p></div>
+<div class="mi"><h4 data-i18n="mm2">Jade</h4><p data-i18n="mm2d">Hetian nephrite from Xinjiang, Burmese jadeite</p></div>
+<div class="mi"><h4 data-i18n="mm3">Gold & Silver</h4><p data-i18n="mm3d">925 sterling, 18K gold, platinum — forged by hand</p></div>
+<div class="mi"><h4 data-i18n="mm4">Wood</h4><p data-i18n="mm4d">Jinsi Nánmù, wild agarwood, ebony — hand-carved</p></div>
+</div></div>
+<div class="mv fi d1"><img src="CHANGAN-site-images/macro.png" alt=""></div>
+</div></div></section>
+
+<section class="sec-pad dark"><div class="cx"><div class="gg">
+<div class="gv fi"><img src="CHANGAN-site-images/gift.png" alt=""></div>
+<div class="fi d1"><p class="cap" data-i18n="gf_label">Gift Giving</p><h2 class="dmd" data-i18n="gf_title">Six routes to the right gift.</h2><p class="bl" style="margin-top:var(--md);">For Abundance · For Joy · For Lightness · For What Lasts · For Grounding · For Peace</p>
+<div class="gf">
+<div class="gfi"><h4 data-i18n="gf1">Gift Box</h4><p data-i18n="gf1d">Matte black, suede-lined, care card included</p></div>
+<div class="gfi"><h4 data-i18n="gf2">Handwritten Note</h4><p data-i18n="gf2d">Your words, our pen</p></div>
+<div class="gfi"><h4 data-i18n="gf3">Privacy Wrapping</h4><p data-i18n="gf3d">Plain outer package</p></div>
+<div class="gfi"><h4 data-i18n="gf4">Easy Exchange</h4><p data-i18n="gf4d">Recipient exchanges without sender</p></div>
+</div></div>
+</div></div></section>
+
+<section class="trust light"><div class="cx"><div class="ti">
+<div class="tii"><div class="tic">⟡</div><span>Exact Materials</span></div>
+<div class="tii"><div class="tic">↻</div><span>30-Day Returns</span></div>
+<div class="tii"><div class="tic">◈</div><span>1-Year Warranty</span></div>
+<div class="tii"><div class="tic">✈</div><span>International Delivery</span></div>
+<div class="tii"><div class="tic">◇</div><span>Human Support</span></div>
+</div></div></section>
+
+<section class="nl dark"><div class="cn">
+<p style="font-family:var(--fd);font-size:1.2rem;font-style:italic;color:var(--gold);margin-bottom:var(--sm);">Enter the quiet.</p>
+<h2>Stay connected</h2><p>Private previews, new objects, and notes from the CHANG'AN world.</p>
+<form class="nlf" onsubmit="event.preventDefault();this.querySelector('input').value='';"><input type="email" placeholder="Your email address" required><button>Subscribe</button></form>
+</div></section>
+</div>
+
+<!-- ABOUT -->
+<div id="page-about" class="hide">
+<div class="page-hero"><h1>Our Story</h1><p>From a wish, to a name, to a way of being.</p></div>
+<section class="sec-pad light"><div class="cx"><div class="ab-grid">
+<div class="ab-img fi"><img src="CHANGAN-site-images/story.png" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+<div class="fi d1"><div class="ab-char">安</div>
+<p class="bl">The name CHANG'AN comes from the Chinese blessing "多喜乐，长安宁" — may there be much joy and lasting peace. It became a person's name, then a way of holding one's center in a shifting world.</p>
+<div class="ab-block"><h3>From the Mist, Into the World</h3><p class="bm">Morning mist over dark mountains. Still water against stone. A quiet held inside. These are not symbols to decode — they are forms to wear.</p></div>
+<div class="ab-block"><h3>Four Materials, One Approach</h3><p class="bm">Turquoise, jade, precious metal, and fine wood — selected at source, worked by hand. We listen to what the material already is, then shape what it asks to become.</p></div>
+<div class="ab-block"><h3>Six States, Six Ways to Wear Stillness</h3><p class="bm">多喜乐长安宁. Each character names a state — abundance, joy, ease, endurance, grounded presence, stillness.</p></div>
+</div></div></div></section>
+</div>
+
+<!-- COLLECTION AN -->
+<div id="page-collection-an" class="hide">
+<div class="coll-hero"><div><div class="ch-char">安</div><h1>Ān · Grounded Presence</h1><p class="bl">The center holds. Restrained design, quiet surfaces, the weight of presence.</p></div></div>
+<section class="sec-pad light"><div class="cx">
+<div class="coll-filters"><select><option>All Categories</option><option>Jewelry</option><option>Jade</option><option>Gemstone</option></select><select><option>All Materials</option><option>Hetian Jade</option><option>Turquoise</option><option>925 Silver</option></select><select><option>Featured</option><option>Newest</option><option>Price: Low to High</option></select></div>
+<div class="pgrid" style="margin-top:var(--xl)">
+<a href="#product/1" class="pcard fi"><div class="pimg"><img src="CHANGAN-site-images/mist.png" alt=""></div><div class="pmeta"><h3 class="pname">Turquoise 安 Pendant</h3><p class="pser">安 · Gemstone · 925 Silver</p><p class="pprice">$680</p></div></a>
+<a href="#" class="pcard fi d1"><div class="pimg"><img src="CHANGAN-site-images/stone.png" alt=""></div><div class="pmeta"><h3 class="pname">Hetian Jade 安 Bracelet</h3><p class="pser">安 · Jade · 18K Gold</p><p class="pprice">$2,400</p></div></a>
+<a href="#" class="pcard fi d2"><div class="pimg"><img src="CHANGAN-site-images/current.png" alt=""></div><div class="pmeta"><h3 class="pname">Silver 安 Ring</h3><p class="pser">安 · Jewelry · 925 Silver</p><p class="pprice">$380</p></div></a>
+<a href="#" class="pcard fi d3"><div class="pimg"><img src="CHANGAN-site-images/macro.png" alt=""></div><div class="pmeta"><h3 class="pname">Nánmù 安 Box</h3><p class="pser">安 · Wood · Golden Nánmù</p><p class="pprice">$960</p></div></a>
+</div></div></section>
+</div>
+
+<!-- PRODUCT DETAIL -->
+<div id="page-product" class="hide">
+<div class="cx"><div class="pdp">
+<div class="pdp-g"><img src="CHANGAN-site-images/mist.png" alt=""><img src="CHANGAN-site-images/macro.png" alt=""><img src="CHANGAN-site-images/onbody.png" alt=""><img src="CHANGAN-site-images/scale.png" alt=""></div>
+<div class="pdp-i"><p class="pcoll">安 Series · Gemstone</p><h1>Turquoise 安 Pendant</h1><p class="pdp-mat">Natural Turquoise · 925 Sterling Silver · Handcrafted</p><p class="pdp-price">$680</p>
+<div class="pdp-sel"><label>Chain Length</label><select><option>18" / 45cm</option><option>20" / 50cm</option><option>24" / 60cm</option></select></div>
+<button class="add-bag" onclick="addToCart()">Add to Bag</button>
+<p class="pdp-dis">Ready to ship. Estimated delivery: 5–7 business days.</p>
+<div class="pdp-acc">
+<details><summary>Material Truth</summary><p>Each turquoise is hand-selected from Hubei province for its unique matrix and color. Set in solid 925 sterling silver with a matte satin finish. Natural variation in stone pattern is expected and celebrated.</p></details>
+<details><summary>Dimensions & Fit</summary><p>Pendant: 22mm × 16mm. Chain: selectable length. Model wears 18" chain.</p></details>
+<details><summary>Care</summary><p>Turquoise is porous. Avoid water, perfumes, and lotions. Store in the included suede pouch. Clean with a soft dry cloth only.</p></details>
+<details><summary>Shipping & Returns</summary><p>Complimentary shipping over $300. 30-day returns on standard pieces. Duties and taxes calculated at checkout.</p></details>
+</div></div>
+</div></div>
+</div>
+
+<!-- CART -->
+<div id="page-cart" class="hide">
+<div class="cx"><div class="cart-layout">
+<div class="cart-items" id="cart-items"><p class="bm" style="padding:var(--xl) 0;">Your bag is empty.</p></div>
+<div class="cart-summary"><h3>Order Summary</h3>
+<div class="cs-row"><span>Subtotal</span><span id="cs-sub">$0</span></div>
+<div class="cs-row"><span>Shipping</span><span>Calculated at checkout</span></div>
+<div class="cs-row cs-total"><span>Total</span><span id="cs-tot">$0</span></div>
+<a href="#checkout" class="chk-btn">Proceed to Checkout</a>
+</div></div></div>
+</div>
+
+<!-- CHECKOUT -->
+<div id="page-checkout" class="hide">
+<div class="cx">
+<div class="chk-steps"><span class="on">Bag</span><span> → </span><span class="on">Information</span><span> → </span><span>Shipping</span><span> → </span><span>Payment</span></div>
+<div class="chk-grid">
+<div class="chk-form">
+<h3>Contact Information</h3><label>Email</label><input type="email" placeholder="your@email.com">
+<h3 style="margin-top:var(--xl)">Shipping Address</h3><label>Country</label><select><option>United States</option><option>Canada</option><option>United Kingdom</option><option>Australia</option></select>
+<div class="fr" style="margin-top:var(--sm)"><div><label>First Name</label><input></div><div><label>Last Name</label><input></div></div>
+<label>Address</label><input placeholder="Street address">
+<div class="fr"><div><label>City</label><input></div><div><label>ZIP Code</label><input></div></div>
+<label>Phone</label><input placeholder="For delivery updates">
+<p class="bs" style="margin-top:var(--sm);">Duties and taxes are calculated at checkout where available. Otherwise, they may be collected upon delivery.</p>
+</div>
+<div class="cart-summary"><h3>Order Summary</h3><p class="bs" style="margin-top:var(--sm);">Items from your bag will appear here.</p></div>
+</div></div>
+</div>
+
+<footer class="footer dark"><div class="cx">
+<div class="fg">
+<div class="fb"><a href="#home" class="wm" style="font-size:1.3rem;color:var(--ti);display:block;margin-bottom:var(--md);">CHANG'AN</a><p>A wish, a name, a way of being. Sculptural craft shaped by stillness, balance, and the quiet movement of nature.</p></div>
+<div class="fc"><h4>Shop</h4><ul><li><a href="#">Gemstones</a></li><li><a href="#">Jade</a></li><li><a href="#">Jewelry</a></li><li><a href="#">Woodcraft</a></li></ul></div>
+<div class="fc"><h4>Collections</h4><ul><li><a href="#collection/an">AN 安</a></li><li><a href="#collection/duo">DUO 多</a></li><li><a href="#collection/xi">XI 喜</a></li><li><a href="#collection/le">LE 乐</a></li></ul></div>
+<div class="fc"><h4>Support</h4><ul><li><a href="#">Shipping & Returns</a></li><li><a href="#">Duties & Taxes</a></li><li><a href="#">Warranty & Repair</a></li><li><a href="#">Contact</a></li><li><a href="#about">About</a></li></ul></div>
+</div>
+<div class="fbot"><span>© 2026 CHANG'AN. All rights reserved.</span><ul class="fbl"><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li><li><a href="#">Accessibility</a></li><li><span>US · USD $</span></li></ul></div>
+</div></footer>
+
+<script>
+const I={en:{
+lang_label:"中文",banner:"Complimentary International Shipping on Orders Over $300 · ",learnmore:"Learn more",
+search:"Search",account:"Account",bag:"Bag",
+n_new:"New In",n_coll:"Collections",n_gems:"Gemstones",n_jade:"Jade",n_jewelry:"Jewelry",n_wood:"Woodcraft",n_gifts:"Gifts",n_about:"About",
+m_shop:"Shop by Material",m_coll:"Six Collections",m_more:"More",
+hero_eyebrow:"CHANG'AN Collection · 2026",hero_title:"From the Mist,<br>Into the World",hero_sub:"Jewelry and objects for a life held in balance.",hero_cta:"Explore New Arrivals",
+tagline:"多喜乐，长安宁 — A wish for lasting peace.",tagline_sub:"CHANG'AN began as this blessing. It became a name, then a way of returning to one's center — and now, a way of wearing that stillness.",tagline_link:"Discover Our Story →",
+series_label:"Six States, One Wish",series_title:"Collections",
+s_duo:"DUO · Abundance",s_xi:"XI · Joy",s_le:"LE · Ease",s_chang:"CHANG · Enduring",s_an:"AN · Grounded Presence",s_ning:"NING · Stillness",
+mat_shop:"Shop by Material",mat_shop_t:"Four materials, one language",
+cat_gems:"Gemstones",cat_jade:"Jade",cat_jewelry:"Jewelry",cat_wood:"Woodcraft",
+prod_label:"New Arrivals",prod_title:"Selected works",
+p1:"Turquoise 安 Pendant",p2:"Hetian Jade 长 Bracelet",p3:"Gold 喜 Ring",p4:"Nanhong 乐 Earrings",p5:"Agarwood 宁 Necklace",p6:"Jadeite 多 Bangle",p7:"Silver 宁 Cuff",p8:"Nánmù 长 Box",
+mat_label:"Craft & Material Truth",mm1:"Gemstones",mm1d:"Turquoise from Hubei, Nanhong from Sichuan",
+mm2:"Jade",mm2d:"Hetian nephrite from Xinjiang, Burmese jadeite",
+mm3:"Gold & Silver",mm3d:"925 sterling, 18K gold, platinum — forged by hand",
+mm4:"Wood",mm4d:"Jinsi Nánmù, wild agarwood, ebony — hand-carved",
+gf_label:"Gift Giving",gf_title:"Six routes to the right gift.",
+gf1:"Gift Box",gf1d:"Matte black, suede-lined, care card included",
+gf2:"Handwritten Note",gf2d:"Your words, our pen",
+gf3:"Privacy Wrapping",gf3d:"Plain outer package",
+gf4:"Easy Exchange",gf4d:"Recipient exchanges without sender",
+copy:"© 2026 CHANG'AN. All rights reserved."
+},zh:{
+lang_label:"EN",banner:"订单满$300享全球免运费 · ",learnmore:"了解更多",
+search:"搜索",account:"账户",bag:"购物袋",
+n_new:"新品",n_coll:"系列",n_gems:"宝石",n_jade:"玉石",n_jewelry:"首饰",n_wood:"木制",n_gifts:"礼赠",n_about:"品牌故事",
+m_shop:"按材质选购",m_coll:"六大系列",m_more:"更多",
+hero_eyebrow:"CHANG'AN · 2026",hero_title:"从云雾中来，<br>走进人间",hero_sub:"为平衡而生的首饰与器物。",hero_cta:"探索新品",
+tagline:"多喜乐，长安宁 — 一句穿越千年的祝愿。",tagline_sub:"CHANG'AN 始于这句祝愿，成为一个名字，一种回到中心的方式——如今，成为佩戴这份静定的方式。",tagline_link:"了解我们的故事 →",
+series_label:"六种状态，一个祝愿",series_title:"情绪系列",
+s_duo:"多 · 丰盛",s_xi:"喜 · 喜悦",s_le:"乐 · 从容",s_chang:"长 · 持久",s_an:"安 · 沉稳",s_ning:"宁 · 安宁",
+mat_shop:"按材质选购",mat_shop_t:"四种材质，同一种语言",
+cat_gems:"宝石",cat_jade:"玉石",cat_jewelry:"首饰",cat_wood:"木制",
+prod_label:"新品上市",prod_title:"精选作品",
+p1:"绿松石 安 吊坠",p2:"和田玉 长 手镯",p3:"黄金 喜 戒指",p4:"南红 乐 耳坠",p5:"沉香 宁 项链",p6:"翡翠 多 手镯",p7:"银 宁 手环",p8:"楠木 长 木盒",
+mat_label:"材质与工艺",mm1:"宝石",mm1d:"湖北绿松石、四川南红",
+mm2:"玉石",mm2d:"新疆和田玉、缅甸翡翠",mm3:"金银",mm3d:"925纯银、18K金、铂金——手工锻造",
+mm4:"木",mm4d:"金丝楠木、沉香、乌木——手工雕刻",
+gf_label:"礼赠",gf_title:"六条路径，找到对的那件。",
+gf1:"礼盒",gf1d:"哑黑盒身，绒面内衬",gf2:"手写留言",gf2d:"你的心意，我们的笔墨",
+gf3:"隐私包装",gf3d:"外包装朴素",gf4:"轻松换货",gf4d:"收礼人无需联系送礼人",
+copy:"© 2026 CHANG'AN. 保留所有权利。"
+}};
+function S(l){document.documentElement.setAttribute('lang',l);localStorage.setItem('cl',l);
+document.querySelectorAll('[data-i18n]').forEach(e=>{const k=e.getAttribute('data-i18n');if(I[l]&&I[l][k])e.innerHTML=I[l][k];});
+document.getElementById('langToggle').textContent=I[l].lang_label;}
+S(localStorage.getItem('cl')||'en');
+document.getElementById('langToggle').addEventListener('click',()=>S(document.documentElement.getAttribute('lang')==='en'?'zh':'en'));
+function sp(id){document.querySelectorAll('[id^=\"page-\"]').forEach(p=>p.classList.add('hide'));const pg=document.getElementById('page-'+id);if(pg)pg.classList.remove('hide');window.scrollTo(0,0)}
+function rt(){const h=location.hash.replace('#','')||'home';if(h==='home')sp('home');else if(h==='about')sp('about');else if(h.startsWith('collection/'))sp(h.split('/')[1]==='an'?'collection-an':'home');else if(h.startsWith('product/'))sp('product');else if(h==='cart')sp('cart');else if(h==='checkout')sp('checkout');else sp('home')}
+window.addEventListener('hashchange',rt);rt();
+let cart=[];function addToCart(){cart.push({name:'Turquoise 安 Pendant',price:680});uc()}
+function uc(){document.getElementById('bc').textContent=cart.length;const s=cart.reduce((t,i)=>t+i.price,0);const b=document.getElementById('cs-sub');if(b)b.textContent='$'+s;const t=document.getElementById('cs-tot');if(t)t.textContent='$'+s}
+document.getElementById('nt').addEventListener('click',()=>document.getElementById('mn').classList.add('open'));
+document.getElementById('mc').addEventListener('click',()=>document.getElementById('mn').classList.remove('open'));
+document.querySelectorAll('#mn a').forEach(a=>a.addEventListener('click',()=>document.getElementById('mn').classList.remove('open')));
+document.querySelectorAll('.fi').forEach(el=>new IntersectionObserver((es,o)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');o.unobserve(e.target)}})}).observe(el));
+</script>
+</body>
+</html>
