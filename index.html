@@ -36,6 +36,7 @@
 
 /* Material page hero backgrounds */
 #gemstones .page-hero{background:linear-gradient(90deg,rgba(3,10,17,.92),rgba(3,10,17,.4)),url('CHANGAN-site-images/gemstone-bg.png') center/cover no-repeat}
+#jade .page-hero{background:linear-gradient(90deg,rgba(3,10,17,.92),rgba(3,10,17,.4)),url('CHANGAN-site-images/jade-bg.png') center/cover no-repeat}
 #jewelry .page-hero{background:linear-gradient(90deg,rgba(3,10,17,.92),rgba(3,10,17,.4)),url('CHANGAN-site-images/onbody.png') center/cover no-repeat}
 #woodcraft .page-hero{background:linear-gradient(90deg,rgba(3,10,17,.92),rgba(3,10,17,.4)),url('CHANGAN-site-images/wood-bg.png') center/cover no-repeat}
 
@@ -54,7 +55,7 @@
 <div class="announcement">Complimentary international shipping on orders over $300</div>
 <header class="header">
   <div class="head-main"><button class="icon menu" id="menu" aria-label="Open menu">☰</button><a class="wordmark" href="#home">CHANG'AN <span>长安</span></a><div class="tools"><button class="icon account" aria-label="Search">⌕</button><button class="icon account" aria-label="Account">♙</button><button class="icon" id="bag" aria-label="Shopping bag">♧<span class="bag-count" id="bagCount">0</span></button></div></div>
-  <nav class="nav" aria-label="Primary"><a href="#collections">Series</a><a href="#gemstones">Gemstones</a><a href="#gemstones">Jade</a><a href="#jewelry">Jewelry</a><a href="#woodcraft">Woodcraft</a><a href="#home">Gifts</a><a href="#about">About</a></nav>
+  <nav class="nav" aria-label="Primary"><a href="#collections">Series</a><a href="#gemstones">Gemstones</a><a href="#jade">Jade</a><a href="#jewelry">Jewelry</a><a href="#woodcraft">Woodcraft</a><a href="#home">Gifts</a><a href="#about">About</a></nav>
 </header>
 <aside class="drawer" id="drawer"><button class="drawer-close" id="closeMenu">×</button><p class="eyebrow">CHANG'AN</p><a href="#home">Home</a><a href="#gemstones">Gemstones</a><a href="#jewelry">Jewelry</a><a href="#woodcraft">Woodcraft</a><a href="#collections">Six collections</a><a href="#about">Our story</a><a href="#bag">Your bag</a></aside>
 
@@ -71,7 +72,7 @@
 </div></div></section>
 <section class="section"><div class="section-head"><div><p class="eyebrow">Natural materials</p><h2 class="section-title">Shop by material.</h2></div><a class="text-link" href="#gemstones">View all pieces</a></div><div class="material-grid">
 <a class="material" href="#gemstones"><img src="CHANGAN-site-images/gemstone-bg.png" alt="Turquoise and Nanhong agate"><div class="material-copy"><h3>Gemstones</h3><p>Turquoise · Nanhong agate</p><span class="text-link">Explore</span></div></a>
-<a class="material" href="#gemstones"><img src="CHANGAN-site-images/jade-bg.png" alt="Jade"><div class="material-copy"><h3>Jade</h3><p>Hetian jade · Jadeite</p><span class="text-link">Explore</span></div></a>
+<a class="material" href="#jade"><img src="CHANGAN-site-images/jade-bg.png" alt="Jade"><div class="material-copy"><h3>Jade</h3><p>Hetian jade · Jadeite</p><span class="text-link">Explore</span></div></a>
 <a class="material" href="#jewelry"><img src="CHANGAN-site-images/onbody.png" alt="Gold and silver jewelry"><div class="material-copy"><h3>Gold & silver</h3><p>Precious metal · Quiet form</p><span class="text-link">Explore</span></div></a>
 <a class="material" href="#woodcraft"><img src="CHANGAN-site-images/wood-bg.png" alt="Carved dark wood"><div class="material-copy"><h3>Woodcraft</h3><p>Golden-thread nanmu · Agarwood</p><span class="text-link">Explore</span></div></a></div></section>
 <section class="section products"><div class="section-inner"><div class="section-head"><div><p class="eyebrow">New arrivals</p><h2 class="section-title">Pieces for the present.</h2></div><a class="text-link" href="#gemstones">Shop all</a></div><div class="product-grid" id="homeProducts"></div></div></section>
@@ -84,6 +85,11 @@
 <main id="gemstones" class="route"><section class="page-hero"><p class="eyebrow">Vivid minerals, each a universe</p><h1>Gemstones</h1><p style="max-width:600px;color:#c6cbce;margin:16px auto 0">Turquoise from Hubei. Nanhong agate from Sichuan. Each stone hand-selected for its unique matrix, color and character.</p></section>
 <section class="catalog"><a class="back" href="#home">← Back home</a>
 <div class="product-grid" id="gemProducts"></div></section></main>
+
+<!-- JADE PAGE -->
+<main id="jade" class="route"><section class="page-hero"><p class="eyebrow">Stillness carved in stone</p><h1>Jade</h1><p style="max-width:600px;color:#c6cbce;margin:16px auto 0">Hetian nephrite from Xinjiang. Burmese jadeite. Each piece carved to honor the stone's natural character — never forced, never overworked.</p></section>
+<section class="catalog"><a class="back" href="#home">← Back home</a>
+<div class="product-grid" id="jadeProducts"></div></section></main>
 
 <!-- JEWELRY PAGE -->
 <main id="jewelry" class="route"><section class="page-hero"><p class="eyebrow">Forged by hand, worn with intention</p><h1>Gold & Silver Jewelry</h1><p style="max-width:600px;color:#c6cbce;margin:16px auto 0">Rings, pendants and cuffs in 925 sterling silver and 18K gold. Each piece hand-forged with quiet precision.</p></section>
@@ -118,6 +124,10 @@ const products=[
  {id:5,name:'Turquoise Solitaire Ring',tag:'Duō · Abundance',detail:'Natural turquoise · 925 silver',price:680,img:'CHANGAN-site-images/gemstone-bg.png',cat:'gem'},
  {id:6,name:'Nanhong Drop Earrings',tag:'Xǐ · Joy',detail:'Nanhong agate · 18K gold vermeil',price:520,img:'CHANGAN-site-images/macro.png',cat:'gem'},
  {id:7,name:'Turquoise Bead Strand',tag:'Ān · Grounded',detail:'Graduated turquoise · Silk cord',price:890,img:'CHANGAN-site-images/mist.png',cat:'gem'},
+ {id:16,name:'Hetian Jade 安 Bracelet',tag:'Ān · Grounded',detail:'Hetian nephrite · 18K gold clasp',price:2400,img:'CHANGAN-site-images/stone.png',cat:'jade'},
+ {id:17,name:'Jadeite 多 Bangle',tag:'Duō · Abundance',detail:'Burmese jadeite · Solid form',price:3600,img:'CHANGAN-site-images/jade-bg.png',cat:'jade'},
+ {id:18,name:'Serpentine 宁 Pendant',tag:'Níng · Stillness',detail:'Serpentine jade · Leather cord',price:680,img:'CHANGAN-site-images/current.png',cat:'jade'},
+ {id:19,name:'Hetian Jade 长 Ring',tag:'Cháng · Enduring',detail:'White hetian · 18K gold band',price:1800,img:'CHANGAN-site-images/mist.png',cat:'jade'},
  {id:8,name:'Gold Signet Ring',tag:'Duō · Abundance',detail:'18K solid gold · Satin finish',price:2200,img:'CHANGAN-site-images/stone.png',cat:'jwl'},
  {id:9,name:'Silver Locket Pendant',tag:'Níng · Stillness',detail:'925 silver · Hidden compartment',price:480,img:'CHANGAN-site-images/current.png',cat:'jwl'},
  {id:10,name:'Gold Chain Bracelet',tag:'Lè · Ease',detail:'18K gold · Articulated links',price:1580,img:'CHANGAN-site-images/onbody.png',cat:'jwl'},
@@ -131,6 +141,7 @@ let cart=JSON.parse(localStorage.getItem('changan-cart')||'[]');if(!Array.isArra
 const card=p=>`<article class="product"><a href="#product/${p.id}" class="product-image"><img src="${p.img}" alt="${p.name}"></a><div class="product-meta"><span class="tag">${p.tag}</span><h3><a href="#product/${p.id}">${p.name}</a></h3><p class="detail">${p.detail}</p><p class="price">$${p.price.toLocaleString()} USD</p><button class="add" data-add="${p.id}">Add to bag</button></div></article>`;
 homeProducts.innerHTML=products.slice(0,4).map(card).join('');
 gemProducts.innerHTML=products.filter(p=>p.cat==='gem').map(card).join('');
+jadeProducts.innerHTML=products.filter(p=>p.cat==='jade').map(card).join('');
 jwlProducts.innerHTML=products.filter(p=>p.cat==='jwl').map(card).join('');
 woodProducts.innerHTML=products.filter(p=>p.cat==='wood').map(card).join('');
 anProducts.innerHTML=products.slice(0,4).map(p=>card({...p,tag:'Ān · Grounded presence'})).join('');
